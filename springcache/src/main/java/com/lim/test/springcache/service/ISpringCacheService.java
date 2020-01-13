@@ -1,10 +1,10 @@
-package com.lim.test.jetcache.service;
+package com.lim.test.springcache.service;
 
 /**
  * @author Lim
  * @date 2020/1/4
  */
-public interface IJetCacheService {
+public interface ISpringCacheService {
 
     /**
      * 添加缓存数据

@@ -1,6 +1,6 @@
-package com.lim.test.jetcache.controller;
+package com.lim.test.springcache.controller;
 
-import com.lim.test.jetcache.service.IJetCacheService;
+import com.lim.test.springcache.service.IJetCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

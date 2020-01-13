@@ -1,0 +1,16 @@
+server:
+  port: 18081
+  servlet:
+    context-path: /springcache
+
+spring:
+  redis:
+    database: 0
+    host: 47.113.120.106
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0

@@ -1,11 +1,11 @@
-package com.lim.test.jetcache.service.impl;
+package com.lim.test.springcache.service.impl;
 
-import com.alicp.jetcache.anno.CacheInvalidate;
-import com.alicp.jetcache.anno.CacheRefresh;
-import com.alicp.jetcache.anno.CacheUpdate;
-import com.alicp.jetcache.anno.Cached;
-import com.lim.test.jetcache.service.IJetCacheService;
+import com.lim.test.springcache.service.ISpringCacheService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,18 +14,18 @@ import org.springframework.stereotype.Service;
  */
 @Slf4j
 @Service
-public class JetCacheServiceImpl implements IJetCacheService {
+@CacheConfig(cacheNames = "cacheTest")
+public class SpringCacheServiceImpl implements ISpringCacheService {
 
     @Override
-    @Cached(name="cacheTest", key="#key", condition = "#value != '5'", expire = 30)
-    @CacheRefresh(refresh = 30)
+    @Cacheable(key = "#key", unless = "#result eq null  or #result eq ''")
     public String post(String key, String value) {
         String rs = modify(value);
         log.info("添加缓存cacheTest，key,value : {}, {}", key, rs);
         return rs;
     }
 
-    @Cached(name="cacheTestDefalut", key="#key", condition = "#value != '5'")
+    @Cacheable(key = "#key", unless = "#result eq null  or #result eq ''")
     public String defalutExpire(String key, String value) {
         String rs = modify(value);
         log.info("添加缓存cacheTestDefalut，key,value : {}, {}", key, rs);
@@ -33,7 +33,7 @@ public class JetCacheServiceImpl implements IJetCacheService {
     }
 
     @Override
-    @CacheUpdate(name="cacheTest", key="#key", value="#result")
+    @CachePut(key = "#key")
     public String put(String key, String value) {
         String rs = modify(value);
         log.info("更新缓存，key,value : {}, {}", key, rs);
@@ -41,14 +41,13 @@ public class JetCacheServiceImpl implements IJetCacheService {
     }
 
     @Override
-    @Cached(name="cacheTest", key="#key", expire = 60)
+    @Cacheable(key = "#key")
     public String get(String key) {
-
         return null;
     }
 
     @Override
-    @CacheInvalidate(name="cacheTest", key="#key")
+    @CacheEvict(key="#key")
     public String delete(String key) {
         log.info("删除缓存，key: {}", key);
         return key;
