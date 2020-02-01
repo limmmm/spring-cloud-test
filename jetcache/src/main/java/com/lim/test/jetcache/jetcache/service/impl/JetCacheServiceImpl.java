@@ -1,10 +1,10 @@
-package com.lim.test.springcache.service.impl;
+package com.lim.test.jetcache.jetcache.service.impl;
 
 import com.alicp.jetcache.anno.CacheInvalidate;
 import com.alicp.jetcache.anno.CacheRefresh;
 import com.alicp.jetcache.anno.CacheUpdate;
 import com.alicp.jetcache.anno.Cached;
-import com.lim.test.springcache.service.IJetCacheService;
+import com.lim.test.jetcache.jetcache.service.IJetCacheService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

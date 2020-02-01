@@ -1,4 +1,4 @@
-package com.lim.test.springcache.service;
+package com.lim.test.jetcache.jetcache.service;
 
 /**
  * @author Lim

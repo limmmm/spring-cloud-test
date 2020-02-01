@@ -1,17 +1,21 @@
-package com.lim.test;
+package com.lim.test.jetcache;
 
 import com.alicp.jetcache.anno.config.EnableCreateCacheAnnotation;
 import com.alicp.jetcache.anno.config.EnableMethodCache;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author Lim
+ * @date 2020/1/4
+ */
 @SpringBootApplication
 @EnableMethodCache(basePackages = "com.lim.test.jetcache")
 @EnableCreateCacheAnnotation
-public class JetcacheApplication {
+public class JetCacheApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JetcacheApplication.class, args);
+        SpringApplication.run(JetCacheApplication.class, args);
     }
 
 }

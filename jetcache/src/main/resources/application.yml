@@ -21,6 +21,9 @@ jetcache:
         minIdle: 5
         maxIdle: 20
         maxTotal: 50
+      # 默认过期时间
       expireAfterWriteInMillis: 3600000
       host: 47.113.120.106
       port: 6379
+      password: redis@ali
+      database: 2

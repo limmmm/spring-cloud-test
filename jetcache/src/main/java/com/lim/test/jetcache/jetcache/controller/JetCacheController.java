@@ -1,15 +1,14 @@
-package com.lim.test.springcache.controller;
+package com.lim.test.jetcache.jetcache.controller;
 
-import com.lim.test.springcache.service.IJetCacheService;
+import com.lim.test.jetcache.jetcache.service.IJetCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * jetcache 测试
+ * jetCache 测试
  * @author Lim
  * @date 2020/1/4
  */
-
 @RestController
 @RequestMapping(value = "/demo/test")
 public class JetCacheController {
