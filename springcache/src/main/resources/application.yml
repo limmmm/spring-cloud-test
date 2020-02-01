@@ -8,6 +8,7 @@ spring:
     database: 0
     host: 47.113.120.106
     port: 6379
+    password: redis@ali
     jedis:
       pool:
         max-active: 8

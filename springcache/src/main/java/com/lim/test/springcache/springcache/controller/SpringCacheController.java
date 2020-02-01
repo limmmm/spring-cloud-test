@@ -1,6 +1,6 @@
-package com.lim.test.springcache.controller;
+package com.lim.test.springcache.springcache.controller;
 
-import com.lim.test.springcache.service.ISpringCacheService;
+import com.lim.test.springcache.springcache.service.ISpringCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
  * @author Lim
  * @date 2020/1/4
  */
-
 @RestController
 @RequestMapping(value = "/demo/test")
 public class SpringCacheController {

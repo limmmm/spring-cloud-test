@@ -1,6 +1,6 @@
-package com.lim.test.springcache.service.impl;
+package com.lim.test.springcache.springcache.service.impl;
 
-import com.lim.test.springcache.service.ISpringCacheService;
+import com.lim.test.springcache.springcache.service.ISpringCacheService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
