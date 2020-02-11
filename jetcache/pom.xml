@@ -10,10 +10,6 @@
     <artifactId>jetcache</artifactId>
     <description>JetCache Test Project</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
