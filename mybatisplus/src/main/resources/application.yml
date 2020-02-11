@@ -1,0 +1,4 @@
+server:
+  port: 18083
+  servlet:
+    context-path: /mybatisplus
