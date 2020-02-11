@@ -2,3 +2,10 @@ server:
   port: 18083
   servlet:
     context-path: /mybatisplus
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.113.120.106:3307/test?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: ali@123
