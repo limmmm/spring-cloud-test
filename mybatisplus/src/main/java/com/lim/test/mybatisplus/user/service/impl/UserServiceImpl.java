@@ -95,7 +95,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     @Override
     public IPage<User> pageCondition(UserPageDto userPageDto) {
-        return null;
+
+        // 使用mapper内置方法查询
+        // 其他分页查询参考page，查询条件设置参考listCondition
+        User user = new User();
+        BeanUtils.copyProperties(userPageDto, user);
+        IPage<User> page1 = baseMapper.selectPage(userPageDto, new QueryWrapper<>(user));
+
+        return page1;
     }
 
     @Override
