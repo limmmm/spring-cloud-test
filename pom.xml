@@ -19,6 +19,7 @@
         <com.lim.spring_cloud_test.version>0.0.1-SNAPSHOT</com.lim.spring_cloud_test.version>
         <mybatis.plus.version>3.3.1</mybatis.plus.version>
         <mysql-connector.version>5.1.4</mysql-connector.version>
+        <p6spy.version>3.8.0</p6spy.version>
     </properties>
 
     <modules>
