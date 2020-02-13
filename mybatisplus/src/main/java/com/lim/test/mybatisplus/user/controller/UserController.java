@@ -2,6 +2,8 @@ package com.lim.test.mybatisplus.user.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.lim.test.mybatisplus.user.model.dto.UserListDto;
+import com.lim.test.mybatisplus.user.model.dto.UserPageDto;
 import com.lim.test.mybatisplus.user.model.dto.UserSaveDto;
 import com.lim.test.mybatisplus.user.model.entity.User;
 import com.lim.test.mybatisplus.user.service.IUserService;
@@ -32,6 +34,15 @@ public class UserController {
     }
 
     /**
+     * 条件查询所有
+     * @return List<User>
+     */
+    @GetMapping("/list/condition")
+    public List<User> listCondition(UserListDto userListDto) {
+        return userService.listCondition(userListDto);
+    }
+
+    /**
      * 分页查询
      * @return List<User>
      */
@@ -41,6 +52,15 @@ public class UserController {
         page.setSize(3);
         page.setCurrent(1);
         return userService.page(page);
+    }
+
+    /**
+     * 条件分页查询
+     * @return List<User>
+     */
+    @GetMapping("/page/condition")
+    public IPage<User> pageCondition(UserPageDto pageDto) {
+        return userService.pageCondition(pageDto);
     }
 
     /**
