@@ -39,6 +39,8 @@ public class RoleController {
      */
     @PostMapping
     public Integer insert(@RequestBody RoleSaveDto roleSaveDto) {
+        // WARN: 枚举类型参数接收需为string类型，若为int类型，则会根据ordinary进行匹配从而导致匹配错误
+        // WARN: 枚举类中无法匹配则接口报错，不进入接口方法
         return roleService.insert(roleSaveDto);
     }
 

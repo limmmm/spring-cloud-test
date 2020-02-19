@@ -1,5 +1,7 @@
 package com.lim.test.mybatisplus.role.model.dto;
 
+import com.lim.test.mybatisplus.role.model.enums.RoleCodeEnum;
+import com.lim.test.mybatisplus.role.model.enums.RoleTypeEnum;
 import lombok.Data;
 
 /**
@@ -11,18 +13,18 @@ public class RoleSaveDto {
 
 
     /**
-     * '姓名'
+     * 编码
      */
-    private String code;
+    private RoleCodeEnum code;
 
     /**
-     * '姓名'
+     * 名称
      */
     private String name;
 
     /**
      * 类别
      */
-    private Integer type;
+    private RoleTypeEnum type;
 
 }
