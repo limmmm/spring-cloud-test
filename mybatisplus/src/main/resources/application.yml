@@ -16,3 +16,4 @@ mybatis-plus:
       logic-delete-field: flag  #全局逻辑删除字段值
       logic-delete-value: 0 # 逻辑已删除值(默认为 1)
       logic-not-delete-value: 1 # 逻辑未删除值(默认为 0)
+  typeEnumsPackage: com.lim.test.mybatisplus.*.model.enums
