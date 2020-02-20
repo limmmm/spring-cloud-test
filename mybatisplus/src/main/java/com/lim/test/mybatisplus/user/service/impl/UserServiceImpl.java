@@ -2,6 +2,7 @@ package com.lim.test.mybatisplus.user.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -119,7 +120,30 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     @Override
     public Integer update(User user) {
-        return userMapper.updateById(user);
+        // 根据id更新整个对象
+        Integer rs = userMapper.updateById(user);
+
+        // 使用wrapper更新整个对象，id不会更新
+        UpdateWrapper<User> uw = new UpdateWrapper<>();
+        uw.lambda().eq(User::getId, user.getId());
+        // user.setId((long) 7); // 此处改变id无效，不更新id
+        baseMapper.update(user, uw);
+
+        // 使用wrapper更新
+        uw = new UpdateWrapper<>();
+        uw.set("name", user.getName()).set("age", user.getAge()).set("email", user.getEmail())
+                .eq("id", user.getId());
+        baseMapper.update(null, uw);
+
+        // 使用wrapper lambda更新
+        uw = new UpdateWrapper<>();
+        uw.lambda().set(User::getName, user.getName()).set(User::getAge, user.getAge()).set(User::getEmail, user.getEmail())
+                .eq(User::getId, user.getId());
+        baseMapper.update(null, uw);
+
+        // 省略根据mapper、xml更新
+
+        return rs;
     }
 
     @Override
