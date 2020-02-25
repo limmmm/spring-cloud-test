@@ -7,8 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import com.lim.test.http.annoation.CannotHaveBlank;
 
 /**
  * 所有方法开启参数校验
@@ -53,6 +53,16 @@ public class AllValidateController {
     @GetMapping("/test4")
     public String test4(@Validated(NameGroup.class) UserDto dto) {
         return JSONObject.toJSONString(dto);
+    }
+
+    /**
+     * 自定义注解
+     * 会触发校验
+     * WARN: CannotHaveBlank 包可能无法自动import，手动添加即可
+     */
+    @GetMapping("/test5")
+    public String test5(@CannotHaveBlank(message="name can't have blank char") String name) {
+        return "name : " + name;
     }
 
 }
