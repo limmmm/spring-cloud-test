@@ -20,6 +20,7 @@
         <mybatis.plus.version>3.3.1</mybatis.plus.version>
         <mysql-connector.version>5.1.4</mysql-connector.version>
         <p6spy.version>3.8.0</p6spy.version>
+        <springfox-swagger.version>2.9.2</springfox-swagger.version>
     </properties>
 
     <modules>
@@ -29,6 +30,7 @@
         <module>mybatisplus</module>
         <module>http</module>
         <module>mybatis-generator</module>
+        <module>swagger</module>
     </modules>
 
     <dependencies>
@@ -68,6 +70,8 @@
             <version>1.2.62</version>
         </dependency>
     </dependencies>
+
+    <packaging>pom</packaging>
 
     <build>
         <plugins>
