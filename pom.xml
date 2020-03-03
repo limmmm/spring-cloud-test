@@ -21,6 +21,7 @@
         <mysql-connector.version>5.1.4</mysql-connector.version>
         <p6spy.version>3.8.0</p6spy.version>
         <springfox-swagger.version>2.9.2</springfox-swagger.version>
+        <activiti.version>7.1.0.M6</activiti.version>
     </properties>
 
     <modules>
@@ -31,6 +32,7 @@
         <module>http</module>
         <module>mybatis-generator</module>
         <module>swagger</module>
+        <module>activiti</module>
     </modules>
 
     <dependencies>

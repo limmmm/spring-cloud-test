@@ -1,0 +1,14 @@
+server:
+  port: 18086
+  servlet:
+    context-path: /activiti
+
+spring:
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://192.168.40.128:3307/test?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+  activiti:
+    process-definition-location-prefix: classpath*:/processes
+    database-schema-update: true
