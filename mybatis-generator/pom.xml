@@ -57,6 +57,12 @@
             <groupId>com.ibeetl</groupId>
             <artifactId>beetl</artifactId>
             <version>3.0.19.RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
     </dependencies>
