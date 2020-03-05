@@ -25,20 +25,24 @@ public class CodeGenerator {
     /** 模块名 */
     private static final String moduleName = "sys";
     /** 表名*/
-    private static final String[] tables = {"user","org"};
+    private static final String[] tables = {"sys_user"};
     /** 项目路径 */
     private final static String projectPath = "C:\\Users\\Lim\\Workspaces\\GitHub\\springCloudTest\\mybatis-generator";
     /** 包基础路径 */
     private final static String packagePath = "com.lim.test.base";
+    /** 父类-数据库通用字段 */
+    private final static String entityParent = "com.lim.test.base.BaseEntity";
+    /** 写于父类的字段 */
+    private final static String[] parentFields = {"id","creator_id","creator_name","create_time","updater_id","updater_name","update_time","deleted"};
 
     /**
      * 数据源配置
      */
     private static DataSourceConfig getDataSourceConfig(){
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://127.0.0.1:3307/test?useUnicode=true&useSSL=false&characterEncoding=utf8");
-        dsc.setUsername("");
-        dsc.setPassword("");
+        dsc.setUrl("jdbc:mysql://192.168.40.128:3307/bms?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUsername("root");
+        dsc.setPassword("123456");
 //        dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         return dsc;
@@ -72,7 +76,8 @@ public class CodeGenerator {
         gc.setAuthor("lim");
         gc.setOpen(false);
         gc.setFileOverride(fileOverride);
-        // gc.setSwagger2(true); 实体属性 Swagger2 注解
+        // 实体属性 Swagger2 注解
+        gc.setSwagger2(true);
         return gc;
     }
 
@@ -141,17 +146,16 @@ public class CodeGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-//        strategy.setSuperEntityClass("你自己的父类实体,没有就不用设置!");
+        strategy.setSuperEntityClass(entityParent);
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         // 公共父类
 //        strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
         // 写于父类中的公共字段
-        strategy.setSuperEntityColumns("id");
-//        strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
+        strategy.setSuperEntityColumns(parentFields);
         strategy.setInclude(tables);
         strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix(moduleName + "_");
+//        strategy.setTablePrefix(moduleName + "_");
         return strategy;
     }
 }

@@ -1,8 +1,8 @@
 package com.lim.test.base.sys.service.impl;
 
-import com.lim.test.base.sys.entity.User;
-import com.lim.test.base.sys.mapper.UserMapper;
-import com.lim.test.base.sys.service.IUserService;
+import com.lim.test.base.sys.entity.SysUser;
+import com.lim.test.base.sys.mapper.SysUserMapper;
+import com.lim.test.base.sys.service.ISysUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2020-03-05
  */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
 
 }
