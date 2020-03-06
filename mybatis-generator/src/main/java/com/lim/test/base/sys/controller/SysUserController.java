@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- *  前端控制器
+ * 用户信息表 前端控制器
  * </p>
  *
  * @author lim
- * @since 2020-03-01
+ * @since 2020-03-06
  */
 @RestController
-@RequestMapping("/sys/hello")
-public class HelloController {
+@RequestMapping("/sys/sys-user")
+public class SysUserController {
 
 }
