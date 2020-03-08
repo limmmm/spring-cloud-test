@@ -31,7 +31,7 @@ public class ResultVOUtil {
 	 * @param show 是否显示提示信息
 	 */
 	public static <T> ResultVO<T> error(Boolean show) {
-		return new ResultVO<T>(ResultEnum.SERVICE_ERROR.getCode(), ResultEnum.SERVICE_ERROR.getMessage(), show, null);
+		return new ResultVO<T>(ResultEnum.SERVER_ERROR.getCode(), ResultEnum.SERVER_ERROR.getMessage(), show, null);
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class ResultVOUtil {
 	 * @param show 是否显示提示信息
 	 */
 	public static <T> ResultVO<T> error(String message, Boolean show) {
-		return new ResultVO<T>(ResultEnum.SERVICE_ERROR.getCode(), message, show, null);
+		return new ResultVO<T>(ResultEnum.SERVER_ERROR.getCode(), message, show, null);
 	}
 
 	/**

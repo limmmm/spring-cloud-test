@@ -15,7 +15,7 @@ public enum ResultEnum {
 	PARAM_ERROR(1002, "参数格式错误！"),
 	PERMISSION_FORBIDDEN(1003, "无操作权限！"),
 	PERMISSION_LOCK(1004, "数据锁定！"),
-	SERVICE_ERROR(1005,"业务逻辑错误！")
+	SERVER_ERROR(1005,"操作失败！")
     ;
 	
     private Integer code;
