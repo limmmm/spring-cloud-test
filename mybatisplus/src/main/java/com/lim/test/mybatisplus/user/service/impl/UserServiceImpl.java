@@ -1,9 +1,11 @@
 package com.lim.test.mybatisplus.user.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -43,25 +45,40 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         // baseMapper 内置方法查询 - 对象
         User user = new User();
         BeanUtils.copyProperties(userListDto, user);
-        List<User> rs1 = baseMapper.selectList(Wrappers.query(user));
+        // WARN: 直接使用对象生成wrapper，null将被忽略
+        QueryWrapper<User> queryWrapper = Wrappers.query(user);
+        List<User> rs1 = baseMapper.selectList(queryWrapper);
         log.info("rs1: {}", rs1);
 
         // baseMapper 内置方法查询 - queryWrapper
-        // null会参与匹配
+        // WARN: 使用带条件的条件构造方法，不带条件的话null也将参与参数匹配
         QueryWrapper<User> qw = new QueryWrapper<>();
-        qw.eq("age", userListDto.getAge());
-        qw.like("name", userListDto.getName());
-        qw.likeLeft("email", userListDto.getEmail());
+        qw.eq(userListDto.getAge() != null, "age", userListDto.getAge());
+        qw.like(StringUtils.isNotBlank(userListDto.getName()), "name", userListDto.getName());
+        qw.likeLeft(StringUtils.isNotBlank(userListDto.getEmail()), "email", userListDto.getEmail());
         List<User> rs2 = baseMapper.selectList(qw);
         log.info("rs2: {}", rs2);
 
         // 使用baseMapper查询
+        // WARN: 未处理非空问题
         List<User> rs3 = baseMapper.listConditionMapper(userListDto);
         log.info("rs3: {}", rs3);
 
         // xml条件查询，对查询条件进行处理
         List<User> rs4 = baseMapper.listConditionXml(userListDto);
         log.info("rs4: {}", rs4);
+
+        // 使用lambda进行查询，通过构造方法传入条件
+        List<User> rs5 = baseMapper.selectList(Wrappers.lambdaQuery(user));
+        log.info("rs5: {}", rs5);
+
+        // 使用lambda进行查询，后续构造条件
+        LambdaQueryWrapper<User> lqw = Wrappers.lambdaQuery(User.class);
+        lqw.eq(User::getName, userListDto.getName());
+        lqw.eq(userListDto.getAge() != null, User::getAge, userListDto.getAge());
+        lqw.eq(StringUtils.isNotBlank(userListDto.getEmail()), User::getEmail, userListDto.getEmail());
+        List<User> rs6 = baseMapper.selectList(lqw);
+        log.info("rs6: {}", rs6);
 
         return rs1;
     }
@@ -147,7 +164,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
-    public Integer delete(Long id) {
+    public Integer delete(Integer id) {
         return userMapper.deleteById(id);
     }
 }

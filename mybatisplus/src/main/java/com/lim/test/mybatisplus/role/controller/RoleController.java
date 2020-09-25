@@ -34,23 +34,26 @@ public class RoleController {
 
     /**
      * 新增
+     * WARN: 若code、type所传参数值不在提供的范围内，则请求会直接报错，不会进入controller
+     * WARN: 枚举类型参数接收需为string类型，若为int类型，则会根据ordinary进行匹配从而导致匹配错误
+     *     请求中type的值若为数字1，则将匹配到TYPE2，若未字符串1，则将匹配到TYPE1
+     *
      * @param roleSaveDto 机构信息
      * @return 影响的记录条数
      */
     @PostMapping
     public Integer insert(@RequestBody RoleSaveDto roleSaveDto) {
-        // WARN: 枚举类型参数接收需为string类型，若为int类型，则会根据ordinary进行匹配从而导致匹配错误
-        // WARN: 枚举类中无法匹配则接口报错，不进入接口方法
         return roleService.insert(roleSaveDto);
     }
 
     /**
      * 删除
+     * WARN：逻辑删除,在application.yml中进行配置
      * @param id 机构id
      * @return 影响的记录条数
      */
     @DeleteMapping
-    public Integer del(String id) {
+    public Integer del(Integer id) {
         return roleService.delete(id);
     }
 

@@ -12,8 +12,8 @@ import lombok.Data;
 @Data
 public class Org {
 
-    @TableId(type = IdType.ASSIGN_UUID)
-    private String id;
+    @TableId(type = IdType.AUTO)
+    private Integer id;
 
     /**
      * '姓名'

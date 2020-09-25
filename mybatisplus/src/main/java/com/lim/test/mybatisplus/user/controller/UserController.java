@@ -8,7 +8,13 @@ import com.lim.test.mybatisplus.user.model.dto.UserSaveDto;
 import com.lim.test.mybatisplus.user.model.entity.User;
 import com.lim.test.mybatisplus.user.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -69,7 +75,8 @@ public class UserController {
      * @return User
      */
     @GetMapping("/single")
-    public User single(Long id) {
+    public User single(Integer id) {
+        // WARN: 不建议使用这种方式，应使用mapper进行操作，便于事务统一处理，参考delete方法实现
         return userService.getById(id);
     }
 
@@ -99,7 +106,7 @@ public class UserController {
      * @return 影响的记录条数
      */
     @DeleteMapping
-    public Integer del(Long id) {
+    public Integer del(Integer id) {
         return userService.delete(id);
     }
 
