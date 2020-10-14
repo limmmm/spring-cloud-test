@@ -34,6 +34,18 @@ public class JetCacheController {
     }
 
     /**
+     * 添加缓存数据
+     * @param key key
+     * @param value value
+     * @return value
+     */
+    @PostMapping("/postMethodName")
+    public String postMethodName(String key, String value) {
+
+        return jetCacheService.postMethodName(value);
+    }
+
+    /**
      * 添加缓存数据,默认过期时间
      * @param key key
      * @param value value

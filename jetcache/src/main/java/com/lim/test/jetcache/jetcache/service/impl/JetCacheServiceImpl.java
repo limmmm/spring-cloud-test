@@ -8,6 +8,8 @@ import com.lim.test.jetcache.jetcache.service.IJetCacheService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Random;
+
 /**
  * @author Lim
  * @date 2020/1/4
@@ -25,6 +27,7 @@ public class JetCacheServiceImpl implements IJetCacheService {
         return rs;
     }
 
+    @Override
     @Cached(name="cacheTestDefalut", key="#key", condition = "#value != '5'")
     public String defalutExpire(String key, String value) {
         String rs = modify(value);
@@ -52,6 +55,16 @@ public class JetCacheServiceImpl implements IJetCacheService {
     public String delete(String key) {
         log.info("删除缓存，key: {}", key);
         return key;
+    }
+
+
+    @Override
+    @Cached(name="cacheTest", key="#root.method.name", condition = "#value != '5'", expire = 10)
+    @CacheRefresh(refresh = 10)
+    public String postMethodName(String value) {
+        String rs = value + Math.random();
+        log.info("添加缓存cacheTest，value : {}", rs);
+        return rs;
     }
 
     private String modify(String value) {

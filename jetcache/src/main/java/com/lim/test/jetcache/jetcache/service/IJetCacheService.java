@@ -43,4 +43,11 @@ public interface IJetCacheService {
      * @return key
      */
     String delete(String key);
+
+    /**
+     * 添加缓存数据,key为方法名
+     * @param value value
+     * @return value
+     */
+    String postMethodName(String value);
 }
