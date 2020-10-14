@@ -37,11 +37,12 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
     public Integer insert(RoleSaveDto roleSaveDto) {
         Role role = new Role();
         BeanUtils.copyProperties(roleSaveDto, role);
+        role.setFlag(1);
         return baseMapper.insert(role);
     }
 
     @Override
-    public Integer delete(String id) {
+    public Integer delete(Integer id) {
         return baseMapper.deleteById(id);
     }
 }

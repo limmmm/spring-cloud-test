@@ -8,13 +8,13 @@
     <select id="listConditionXml" resultType="com.lim.test.mybatisplus.user.model.entity.User">
 		SELECT id,name,age,email FROM user
 		<where>
-			<if test='#{userListDto.age} != null'>
+			<if test='userListDto.age != null'>
 				and age = #{userListDto.age}
 			</if>
-			<if test='#{userListDto.name} != null'>
+			<if test='userListDto.name != null'>
 				and name like concat('%', #{userListDto.name}, '%')
 			</if>
-			<if test='#{userListDto.email} != null'>
+			<if test='userListDto.email != null'>
 				and email like concat('%', #{userListDto.email})
 			</if>
 		</where>
