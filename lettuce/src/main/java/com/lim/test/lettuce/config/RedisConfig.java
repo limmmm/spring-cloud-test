@@ -13,6 +13,8 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import java.io.Serializable;
 
 /**
+ * redisTemplate 配置
+ *
  * @author Li Ming
  * @date 2020/9/28
  */
