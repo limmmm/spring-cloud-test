@@ -11,16 +11,16 @@ import com.lim.test.http.result.ResultVO;
  */
 public class ServiceException extends RuntimeException {
 
-	private static final long serialVersionUID = 1L;
-	
-	private ResultVO resultVO;
+    private static final long serialVersionUID = 1L;
 
-	public ServiceException(ResultVO resultVO) {
-		super(resultVO.toString());
-		this.resultVO = resultVO;
-	}
+    private ResultVO resultVO;
 
-	public ResultVO getResultVO() {
-		return resultVO;
-	}
+    public ServiceException(ResultVO resultVO) {
+        super(resultVO.toString());
+        this.resultVO = resultVO;
+    }
+
+    public ResultVO getResultVO() {
+        return resultVO;
+    }
 }

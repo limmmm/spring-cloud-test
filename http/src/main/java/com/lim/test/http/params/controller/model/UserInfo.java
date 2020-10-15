@@ -10,13 +10,13 @@ import lombok.Data;
 @Data
 public class UserInfo {
 
-	/** id */
-	private Long userId;
+    /** id */
+    private Long userId;
 
-	/** 用户名 */
-	private String userName;
+    /** 用户名 */
+    private String userName;
 
-	/** 中文名 */
-	private String chineseName;
+    /** 中文名 */
+    private String chineseName;
 
 }

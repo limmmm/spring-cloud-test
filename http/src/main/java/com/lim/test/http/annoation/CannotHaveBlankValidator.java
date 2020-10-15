@@ -10,7 +10,7 @@ import javax.validation.ConstraintValidatorContext;
  */
 public class CannotHaveBlankValidator implements ConstraintValidator<CannotHaveBlank, String>{
 
-	@Override
+    @Override
     public void initialize(CannotHaveBlank constraintAnnotation) {
     }
 

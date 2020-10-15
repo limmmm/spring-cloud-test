@@ -17,23 +17,23 @@ import java.util.Date;
 @Data
 public class UserDto {
 
-	private int age;
+    private int age;
 
-	@NotBlank(groups = {NameGroup.class}, message = "name can not be null or blank")
-	private String name;
+    @NotBlank(groups = {NameGroup.class}, message = "name can not be null or blank")
+    private String name;
 
-	@NotBlank(message = "sex can not be null")
-	private String sex;
+    @NotBlank(message = "sex can not be null")
+    private String sex;
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private Date date;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date date;
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@JsonFormat(pattern = "yyyy/MM/dd")
-	private LocalDate localDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy/MM/dd")
+    private LocalDate localDate;
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private LocalDateTime localDateTime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime localDateTime;
 }

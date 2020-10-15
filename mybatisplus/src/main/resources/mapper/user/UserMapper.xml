@@ -2,21 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lim.test.mybatisplus.user.mapper.UserMapper">
 
-	<select id="pageXml" resultType="com.lim.test.mybatisplus.user.model.entity.User">
-		select * from user
-	</select>
+    <select id="pageXml" resultType="com.lim.test.mybatisplus.user.model.entity.User">
+        select * from user
+    </select>
     <select id="listConditionXml" resultType="com.lim.test.mybatisplus.user.model.entity.User">
-		SELECT id,name,age,email FROM user
-		<where>
-			<if test='userListDto.age != null'>
-				and age = #{userListDto.age}
-			</if>
-			<if test='userListDto.name != null'>
-				and name like concat('%', #{userListDto.name}, '%')
-			</if>
-			<if test='userListDto.email != null'>
-				and email like concat('%', #{userListDto.email})
-			</if>
-		</where>
-	</select>
+        SELECT id,name,age,email FROM user
+        <where>
+            <if test='userListDto.age != null'>
+                and age = #{userListDto.age}
+            </if>
+            <if test='userListDto.name != null'>
+                and name like concat('%', #{userListDto.name}, '%')
+            </if>
+            <if test='userListDto.email != null'>
+                and email like concat('%', #{userListDto.email})
+            </if>
+        </where>
+    </select>
 </mapper>

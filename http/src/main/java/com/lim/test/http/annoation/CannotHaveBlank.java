@@ -14,7 +14,7 @@ import java.lang.annotation.*;
 @Documented
 @Constraint(validatedBy = {CannotHaveBlankValidator.class})
 public @interface CannotHaveBlank {
-	//默认错误消息
+    //默认错误消息
     String message() default "不能包含空格";
 
     //分组
