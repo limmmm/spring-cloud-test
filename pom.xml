@@ -8,8 +8,8 @@
         <version>2.2.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.lim</groupId>
-    <artifactId>test</artifactId>
+    <groupId>com.lim.test</groupId>
+    <artifactId>spring-cloud-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-cloud-test</name>
     <description>Test project for Spring Cloud</description>
@@ -25,15 +25,20 @@
     </properties>
 
     <modules>
-        <module>jetcache</module>
-        <module>base</module>
-        <module>springcache</module>
-        <module>mybatisplus</module>
-        <module>http</module>
-        <module>mybatis-generator</module>
-        <module>swagger</module>
         <module>springtest</module>
+        <module>base</module>
+        <module>http</module>
+        <module>springcache</module>
+        <module>jetcache</module>
+        <module>mybatisplus</module>
+        <module>swagger</module>
         <module>activiti</module>
+        <module>nacos-config-client</module>
+        <module>nacos-discovery-client</module>
+        <module>lettuce</module>
+        <module>amqp</module>
+
+        <module>mybatis-generator</module>
     </modules>
 
     <dependencies>
