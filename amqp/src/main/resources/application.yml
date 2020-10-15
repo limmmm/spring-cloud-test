@@ -1,0 +1,9 @@
+server:
+  port: 18090
+  servlet:
+    context-path: /amqp
+  rabbitmq:
+    host: 127.0.0.1
+    username: guest
+    password: guest
+    virtual-host: /base
