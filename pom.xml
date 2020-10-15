@@ -11,7 +11,7 @@
     <groupId>com.lim</groupId>
     <artifactId>test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>test</name>
+    <name>spring-cloud-test</name>
     <description>Test project for Spring Cloud</description>
 
     <properties>
