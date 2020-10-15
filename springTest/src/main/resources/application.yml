@@ -1,4 +1,4 @@
 server:
-  port: 18087
+  port: 18070
   servlet:
     context-path: /springTest

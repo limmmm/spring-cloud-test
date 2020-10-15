@@ -1,6 +1,7 @@
 package com.lim.test.http.params.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.lim.test.http.validate.module.dto.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,5 +59,11 @@ public class GetTestController {
     public String map2(@RequestParam Map<String, String> map){
         log.info("teststr {}", map);
         return JSONObject.toJSONString(map);
+    }
+
+    @GetMapping("/time")
+    public UserDto time(UserDto userDto) {
+        log.info("{}", userDto);
+        return userDto;
     }
 }

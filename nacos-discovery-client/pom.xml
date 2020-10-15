@@ -8,7 +8,7 @@
         <artifactId>test</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>nacos-provider</artifactId>
+    <artifactId>nacos-discovery-client</artifactId>
     <description>Nacos Discovery Test Project</description>
 
     <dependencies>

@@ -1,7 +1,7 @@
 server:
-  port: 18086
+  port: 18088
   servlet:
-    context-path: /nacos-provider
+    context-path: /nacosDiscovery
 
 spring.application.name: service-provider
 

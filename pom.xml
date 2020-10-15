@@ -34,8 +34,6 @@
         <module>swagger</module>
         <module>springtest</module>
         <module>activiti</module>
-        <module>nacos-provider</module>
-        <module>nacos-client</module>
     </modules>
 
     <dependencies>
