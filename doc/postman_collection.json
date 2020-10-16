@@ -1,0 +1,1217 @@
+{
+	"info": {
+		"_postman_id": "85f28870-5b98-4fa1-a391-e0857e34008c",
+		"name": "springCloudTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "base",
+			"item": [
+				{
+					"name": "url传参",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/request/mapping?id=100&name=lim",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"request",
+								"mapping"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "100"
+								},
+								{
+									"key": "name",
+									"value": "lim"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "url传参，传输于接收的参数名称不同",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base}}/request/requestParam?userId=100&userName=lim",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"request",
+								"requestParam"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "100"
+								},
+								{
+									"key": "userName",
+									"value": "lim"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "url路径传参",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/request/pathVariable/100/lim",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"request",
+								"pathVariable",
+								"100",
+								"lim"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request body payload传参",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"100\",\r\n    \"name\": \"lim\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/request/requestBody",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"request",
+								"requestBody"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request body form-urlencoded传参",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "300",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "lim",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base}}/request/requestBodyForm",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"request",
+								"requestBodyForm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"100\",\r\n    \"name\": \"lim\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/request/request?userId=100&userName=lim",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"request",
+								"request"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "100"
+								},
+								{
+									"key": "userName",
+									"value": "lim"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "file",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/admin/Pictures/tp-link.jpg"
+								},
+								{
+									"key": "userId",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base}}/request/file",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"request",
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rabbitMq触发",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/rabbit/helloworld",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"rabbit",
+								"helloworld"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "lettuce",
+			"item": [
+				{
+					"name": "lettuce操作测试",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preLettuce}}/ops",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preLettuce}}",
+							"path": [
+								"ops"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "http",
+			"item": [
+				{
+					"name": "http请求",
+					"item": [
+						{
+							"name": "get测试json",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{portHttp}}/http/gettest/json2?a=1&b=2",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{portHttp}}",
+									"path": [
+										"http",
+										"gettest",
+										"json2"
+									],
+									"query": [
+										{
+											"key": "a",
+											"value": "1"
+										},
+										{
+											"key": "b",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get测试json",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{server}}:{{portHttp}}/http/gettest/json2?a=1&b=2",
+											"host": [
+												"{{server}}"
+											],
+											"port": "{{portHttp}}",
+											"path": [
+												"http",
+												"gettest",
+												"json2"
+											],
+											"query": [
+												{
+													"key": "a",
+													"value": "1"
+												},
+												{
+													"key": "b",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"result\": \"2\" // 结果\n}"
+								}
+							]
+						},
+						{
+							"name": "get测试map",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}:{{portHttp}}/http/gettest/map2?a=1&b=2",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{portHttp}}",
+									"path": [
+										"http",
+										"gettest",
+										"map2"
+									],
+									"query": [
+										{
+											"key": "a",
+											"value": "1"
+										},
+										{
+											"key": "b",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post测试json",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"a\":\"1\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}:{{portHttp}}/http/posttest/json2",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{portHttp}}",
+									"path": [
+										"http",
+										"posttest",
+										"json2"
+									],
+									"query": [
+										{
+											"key": "1",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post测试map",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{server}}:{{portHttp}}/http/posttest/map3?b=2",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{portHttp}}",
+									"path": [
+										"http",
+										"posttest",
+										"map3"
+									],
+									"query": [
+										{
+											"key": "b",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "validate",
+					"item": [
+						{
+							"name": "参数校验(allvalidate)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{portHttp}}/http/allvalidate/test5?name=a b",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{portHttp}}",
+									"path": [
+										"http",
+										"allvalidate",
+										"test5"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "a b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "参数校验(validate)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{portHttp}}/http/validate/test3?age=aaa",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{portHttp}}",
+									"path": [
+										"http",
+										"validate",
+										"test3"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": " ",
+											"disabled": true
+										},
+										{
+											"key": "age",
+											"value": "aaa"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "response",
+					"item": [
+						{
+							"name": "字符串返回",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{portHttp}}/http/responsetest/str",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{portHttp}}",
+									"path": [
+										"http",
+										"responsetest",
+										"str"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "对象返回",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{portHttp}}/http/responsetest/obj",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{portHttp}}",
+									"path": [
+										"http",
+										"responsetest",
+										"obj"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "错误中断",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{portHttp}}/http/responsetest/err",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{portHttp}}",
+									"path": [
+										"http",
+										"responsetest",
+										"err"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "springCache",
+			"item": [
+				{
+					"name": "保存",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{portSpringCache}}/springcache/demo/test?key=1&value=a",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{portSpringCache}}",
+							"path": [
+								"springcache",
+								"demo",
+								"test"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "1"
+								},
+								{
+									"key": "value",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "保存(默认过期时间)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{portSpringCache}}/springcache/demo/test/defalutExpire?key=2&value=b",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{portSpringCache}}",
+							"path": [
+								"springcache",
+								"demo",
+								"test",
+								"defalutExpire"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "2"
+								},
+								{
+									"key": "value",
+									"value": "b"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "jetCache",
+			"item": [
+				{
+					"name": "保存",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{portJetCache}}/jetcache/demo/test?key=449f3370-4cf6-11e8-85c3-45ad5e3a2bd7&value=a",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{portJetCache}}",
+							"path": [
+								"jetcache",
+								"demo",
+								"test"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "449f3370-4cf6-11e8-85c3-45ad5e3a2bd7"
+								},
+								{
+									"key": "value",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "保存(默认过期时间)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{portJetCache}}/jetcache/demo/test/defalutExpire?key=2&value=b",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{portJetCache}}",
+							"path": [
+								"jetcache",
+								"demo",
+								"test",
+								"defalutExpire"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "2"
+								},
+								{
+									"key": "value",
+									"value": "b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "保存(key为方法名)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{portJetCache}}/jetcache/demo/test/postMethodName?key=1&value=a",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{portJetCache}}",
+							"path": [
+								"jetcache",
+								"demo",
+								"test",
+								"postMethodName"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "1"
+								},
+								{
+									"key": "value",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "mybatisplus",
+			"item": [
+				{
+					"name": "用户(基础操作)",
+					"item": [
+						{
+							"name": "查询用户列表",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/user/list",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"user",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "条件查询用户列表",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/user/list/condition?name=Jone&age=18&email=test1@baomidou.com",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"user",
+										"list",
+										"condition"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Jone"
+										},
+										{
+											"key": "age",
+											"value": "18"
+										},
+										{
+											"key": "email",
+											"value": "test1@baomidou.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "查询用户分页",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/user/page",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"user",
+										"page"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "分页查询用户分页",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/user/page/condition?name=Jone&age=18&email=test1@baomidou.com&current=2&size=20",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"user",
+										"page",
+										"condition"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Jone"
+										},
+										{
+											"key": "age",
+											"value": "18"
+										},
+										{
+											"key": "email",
+											"value": "test1@baomidou.com"
+										},
+										{
+											"key": "current",
+											"value": "2"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "查询单用户",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/user/single?id=1",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"user",
+										"single"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "新增用户",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"lim\",\n\t\"age\": 10,\n\t\"email\": \"lim@email\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/user",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改用户",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 1316941130838859777,\n\t\"name\": \"2lim\",\n\t\"age\": 10,\n\t\"email\": \"lim@email\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/user",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除单用户",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/user?id=1316941130838859777",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"user"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1316941130838859777"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "机构(逻辑删除)",
+					"item": [
+						{
+							"name": "查询机构列表",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/org/list",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"org",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "新增机构",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"机构2\",\n\t\"status\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/org",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"org"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除机构",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/org?id=1316942123269902338",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"org"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1316942123269902338"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "角色(枚举)",
+					"item": [
+						{
+							"name": "查询角色列表",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/role/list",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"role",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "新增角色",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"code\": \"admin\",\n\t\"name\": \"管理员1\",\n\t\"type\": \"1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/role",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除角色",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}:{{preMybatisPlus}}/role?id=1316942909282451458",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{preMybatisPlus}}",
+									"path": [
+										"role"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1316942909282451458"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "swagger",
+			"item": [
+				{
+					"name": "test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{portActiviti}}/activiti/test",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{portActiviti}}",
+							"path": [
+								"activiti",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "activiti",
+			"item": [
+				{
+					"name": "获取用户信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{portSwagger}}/swagger/user/list",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{portSwagger}}",
+							"path": [
+								"swagger",
+								"user",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
