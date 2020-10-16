@@ -35,7 +35,7 @@ public class OrgServiceImpl extends ServiceImpl<OrgMapper, Org> implements IOrgS
     }
 
     @Override
-    public Integer delete(String id) {
+    public Integer delete(Long id) {
         return baseMapper.deleteById(id);
     }
 }

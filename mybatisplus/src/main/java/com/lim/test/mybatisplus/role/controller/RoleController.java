@@ -53,7 +53,7 @@ public class RoleController {
      * @return 影响的记录条数
      */
     @DeleteMapping
-    public Integer del(Integer id) {
+    public Integer del(Long id) {
         return roleService.delete(id);
     }
 

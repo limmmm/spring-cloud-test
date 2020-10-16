@@ -12,8 +12,8 @@ import lombok.Data;
 @Data
 public class Org {
 
-    @TableId(type = IdType.AUTO)
-    private Integer id;
+    @TableId(type = IdType.ASSIGN_ID)
+    private Long id;
 
     /**
      * '姓名'

@@ -31,5 +31,5 @@ public interface IOrgService extends IService<Org> {
      * @param id 机构id
      * @return 影响的记录条数
      */
-    Integer delete(String id);
+    Integer delete(Long id);
 }

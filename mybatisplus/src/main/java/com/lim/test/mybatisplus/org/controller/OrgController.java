@@ -47,7 +47,7 @@ public class OrgController {
      * @return 影响的记录条数
      */
     @DeleteMapping
-    public Integer del(String id) {
+    public Integer del(Long id) {
         return orgService.delete(id);
     }
 

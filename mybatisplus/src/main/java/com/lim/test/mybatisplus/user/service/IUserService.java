@@ -69,5 +69,5 @@ public interface IUserService extends IService<User> {
      * @param id 用户id
      * @return 影响的记录条数
      */
-    Integer delete(Integer id);
+    Integer delete(Long id);
 }

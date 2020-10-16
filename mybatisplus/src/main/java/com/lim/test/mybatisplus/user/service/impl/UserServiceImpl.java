@@ -164,7 +164,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
-    public Integer delete(Integer id) {
+    public Integer delete(Long id) {
         return userMapper.deleteById(id);
     }
 }

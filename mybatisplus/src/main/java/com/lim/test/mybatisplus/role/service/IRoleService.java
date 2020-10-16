@@ -31,5 +31,5 @@ public interface IRoleService extends IService<Role> {
      * @param id 角色id
      * @return 影响的记录条数
      */
-    Integer delete(Integer id);
+    Integer delete(Long id);
 }
