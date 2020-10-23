@@ -1,0 +1,4 @@
+spring:
+  jackson:
+    # null不返回至前端
+    default-property-inclusion: non_null

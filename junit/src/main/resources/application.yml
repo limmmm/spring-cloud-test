@@ -1,0 +1,7 @@
+server:
+  port: 18091
+  servlet:
+    context-path: /junit
+#spring:
+#  jackson:
+#    default-property-inclusion: non_null
