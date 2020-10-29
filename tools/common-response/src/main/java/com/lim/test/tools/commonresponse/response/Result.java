@@ -16,13 +16,6 @@ public class Result {
     }
 
     /**
-     * 操作成功，无业务返回参数, 有提示信息
-     */
-    public static <T> ResponseBody<T> success(String message) {
-        return success(message, null);
-    }
-
-    /**
      * 操作成功，有业务返回参数, 无提示信息
      */
     public static <T> ResponseBody<T> success(T result) {
