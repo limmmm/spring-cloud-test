@@ -1,13 +1,15 @@
-package com.lim.test.jetcache.jetcache.service;
+package com.lim.test.jetcache.demo.service;
 
 /**
- * @author Lim
- * @date 2020/1/4
+ * jetcache 操作
+ *
+ * @author lim
+ * @since 2020/1/4
  */
 public interface IJetCacheService {
 
     /**
-     * 添加缓存数据
+     * 添加缓存数据,自定义过期时间
      * @param key key
      * @param value value
      * @return value

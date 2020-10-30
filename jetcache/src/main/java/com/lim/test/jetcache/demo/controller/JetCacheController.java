@@ -1,18 +1,23 @@
-package com.lim.test.jetcache.jetcache.controller;
+package com.lim.test.jetcache.demo.controller;
 
-import com.lim.test.jetcache.jetcache.service.IJetCacheService;
+import com.lim.test.jetcache.demo.service.IJetCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * jetCache 测试
- * @author Lim
- * @date 2020/1/4
+ *
+ * @author lim
+ * @since 2020/1/4
  */
 @RestController
 @RequestMapping(value = "/demo/test")
 public class JetCacheController {
-
 
     private final IJetCacheService jetCacheService;
 
@@ -22,7 +27,7 @@ public class JetCacheController {
     }
 
     /**
-     * 添加缓存数据
+     * 添加缓存数据,自定义过期时间
      * @param key key
      * @param value value
      * @return value
@@ -34,24 +39,12 @@ public class JetCacheController {
     }
 
     /**
-     * 添加缓存数据
+     * 添加缓存数据,默认过期时间，全局配置
      * @param key key
      * @param value value
      * @return value
      */
-    @PostMapping("/postMethodName")
-    public String postMethodName(String key, String value) {
-
-        return jetCacheService.postMethodName(value);
-    }
-
-    /**
-     * 添加缓存数据,默认过期时间
-     * @param key key
-     * @param value value
-     * @return value
-     */
-    @PostMapping("defalutExpire")
+    @PostMapping("/defalutExpire")
     public String defalutExpire(String key, String value) {
 
         return jetCacheService.defalutExpire(key, value);
@@ -89,6 +82,18 @@ public class JetCacheController {
     public String delete(String key) {
 
         return jetCacheService.delete(key);
+    }
+
+    /**
+     * 添加缓存数据
+     * @param key key
+     * @param value value
+     * @return value
+     */
+    @PostMapping("/postMethodName")
+    public String postMethodName(String key, String value) {
+
+        return jetCacheService.postMethodName(value);
     }
 
 }

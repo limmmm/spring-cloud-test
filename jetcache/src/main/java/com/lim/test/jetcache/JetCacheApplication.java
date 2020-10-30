@@ -6,8 +6,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author Lim
- * @date 2020/1/4
+ * jetcache 测试
+ *
+ * @author lim
+ * @since 2020/1/4
  */
 @SpringBootApplication
 @EnableMethodCache(basePackages = "com.lim.test.jetcache")

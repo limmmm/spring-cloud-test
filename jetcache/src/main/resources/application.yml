@@ -1,3 +1,7 @@
+spring:
+  application:
+    # 应用名称/日志文件名称
+    name: jetcache
 server:
   port: 18083
   servlet:
@@ -10,20 +14,16 @@ jetcache:
     default:
       type: linkedhashmap
       keyConvertor: fastjson
-
   remote:
     default:
-      type: redis
+      type: redis.lettuce
       keyConvertor: fastjson
       valueEncoder: java
       valueDecoder: java
+      uri: redis://password@127.0.0.1:16379/2
       poolConfig:
         minIdle: 5
         maxIdle: 20
         maxTotal: 50
       # 默认过期时间
       expireAfterWriteInMillis: 3600000
-      host: 47.113.120.106
-      port: 6379
-      password: redis@ali
-      database: 2
