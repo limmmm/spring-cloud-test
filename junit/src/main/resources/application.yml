@@ -1,3 +1,7 @@
+spring:
+  application:
+    # 应用名称/日志文件名称
+    name: junit
 server:
   port: 18091
   servlet:

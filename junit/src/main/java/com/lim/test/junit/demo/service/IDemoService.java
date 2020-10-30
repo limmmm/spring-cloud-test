@@ -4,7 +4,7 @@ package com.lim.test.junit.demo.service;
  * 测试service
  *
  * @author lim
- * @date 2020/7/8
+ * @since 2020/7/8
  */
 public interface IDemoService {
 

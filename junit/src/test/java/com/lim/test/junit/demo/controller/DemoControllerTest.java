@@ -23,8 +23,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 /**
  * controller 单元测试
  *
- * @author Lim
- * @date 2020/7/8
+ * @author lim
+ * @since 2020/7/8
  */
 @Slf4j
 @ExtendWith(SpringExtension.class)

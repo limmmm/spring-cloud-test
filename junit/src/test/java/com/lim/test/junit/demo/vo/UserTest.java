@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
  * 普通java类测试
  *
  * @author Li Ming
- * @date 2020/10/22
+ * @since 2020/10/22
  */
 @Slf4j
 class UserTest {
