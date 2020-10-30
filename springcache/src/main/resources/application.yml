@@ -4,6 +4,8 @@ server:
     context-path: /springcache
 
 spring:
+  application:
+    name: springcache
   redis:
     database: 0
     host: 127.0.0.1
