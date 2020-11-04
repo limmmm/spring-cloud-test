@@ -1,9 +1,14 @@
-package com.lim.test.base;
+package com.lim.test.generator;
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
-import com.baomidou.mybatisplus.generator.config.*;
+import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+import com.baomidou.mybatisplus.generator.config.FileOutConfig;
+import com.baomidou.mybatisplus.generator.config.GlobalConfig;
+import com.baomidou.mybatisplus.generator.config.PackageConfig;
+import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.TemplateConfig;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
@@ -13,41 +18,49 @@ import java.util.List;
 
 /**
  * mybatis 代码生成器
- * @author Lim
- * @date 2020/2/27
+ *
+ * @author lim
+ * @since 2020/2/27
  */
 public class CodeGenerator {
 
-    /**
-     * 是否覆盖原有的文件
-     */
-    private final static Boolean fileOverride = true;
-    /** 模块名 */
-    private static final String moduleName = "sys";
-    /** 表名*/
-    private static final String[] tables = {"sys_user"};
+    // 文件相关设置
     /** 项目路径 */
-    private final static String projectPath = "C:\\Users\\Lim\\Workspaces\\GitHub\\springCloudTest\\mybatis-generator";
+    private final static String PROJECT_PATH = "E:\\workspace\\GitHub\\spring-cloud-test\\mybatis-generator";
     /** 包基础路径 */
-    private final static String packagePath = "com.lim.test.base";
-    /** 父类-数据库通用字段 */
-    private final static String entityParent = "com.lim.test.base.BaseEntity";
+    private final static String PACKAGE_PATH = "com.lim.test.generator";
+    /** 是否覆盖原有的文件 */
+    private final static Boolean FILE_OVERRIDE = true;
+    /** 作者(文件author) */
+    private final static String AUTHOR = "lim";
+    /** swagger注释开关 */
+    private final static Boolean SWAGGER = false;
+
+    // 数据库连接设置
+    /** 数据库连接信息格式 */
+    private final static String DB_URL_FORMATTER = "jdbc:mysql://%s:%s/%s?characterEncoding=utf8&serverTimezone" +
+            "=Asia/Shanghai&useSSL=false&zeroDateTimeBehavior=convertToNull";
+    /** 数据库连接信息（ip, port, schema） */
+    private final static String DB_URL = String.format(DB_URL_FORMATTER, "127.0.0.1", "3306", "test");
+    /** 数据库账号 */
+    private final static String DB_USERNAME = "root";
+    /** 数据库密码 */
+    private final static String DB_PASSWORD = "123456";
+
+    // 代码生成内容配置
+    /** 模块名(包名) */
+    private static final String MODULE_NAME = "sys";
+    /** 需逆向生成的表名 */
+    private static final String[] TABLES = {"user"};
+    /** 实体类父类-数据库通用字段 */
+    private final static String ENTITY_PARENT = "com.lim.test.tools.commonmybatis.base.BaseEntity";
     /** 写于父类的字段 */
-    private final static String[] parentFields = {"id","creator_id","creator_name","create_time","updater_id","updater_name","update_time","deleted"};
+    private final static String[] PARENT_FIELDS = {"id", "creator_id", "creator_name", "create_time", "updater_id",
+            "updater_name", "update_time", "deleted"};
 
     /**
-     * 数据源配置
+     * 生成器主调用主方法
      */
-    private static DataSourceConfig getDataSourceConfig(){
-        DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://192.168.40.128:3307/bms?useUnicode=true&useSSL=false&characterEncoding=utf8");
-        dsc.setUsername("root");
-        dsc.setPassword("123456");
-//        dsc.setSchemaName("public");
-        dsc.setDriverName("com.mysql.jdbc.Driver");
-        return dsc;
-    }
-
     public static void main(String[] args) {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
@@ -69,22 +82,35 @@ public class CodeGenerator {
         mpg.execute();
     }
 
+    /**
+     * 数据源配置
+     */
+    private static DataSourceConfig getDataSourceConfig(){
+        DataSourceConfig dsc = new DataSourceConfig();
+        dsc.setUrl(DB_URL);
+        dsc.setUsername(DB_USERNAME);
+        dsc.setPassword(DB_PASSWORD);
+//        dsc.setSchemaName("public");
+        dsc.setDriverName("com.mysql.jdbc.Driver");
+        return dsc;
+    }
+
     private static GlobalConfig getGlobalConfig() {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("lim");
+        gc.setOutputDir(PROJECT_PATH + "/src/main/java");
+        gc.setAuthor(AUTHOR);
         gc.setOpen(false);
-        gc.setFileOverride(fileOverride);
+        gc.setFileOverride(FILE_OVERRIDE);
         // 实体属性 Swagger2 注解
-        gc.setSwagger2(true);
+        gc.setSwagger2(SWAGGER);
         return gc;
     }
 
     private static PackageConfig getPackageConfig() {
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName(moduleName);
-        pc.setParent(packagePath);
+        pc.setModuleName(MODULE_NAME);
+        pc.setParent(PACKAGE_PATH);
         return pc;
     }
 
@@ -109,7 +135,7 @@ public class CodeGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return projectPath + "/src/main/resources/mapper/" + moduleName
+                return PROJECT_PATH + "/src/main/resources/mapper/" + MODULE_NAME
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
@@ -146,14 +172,14 @@ public class CodeGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass(entityParent);
+        strategy.setSuperEntityClass(ENTITY_PARENT);
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         // 公共父类
 //        strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
         // 写于父类中的公共字段
-        strategy.setSuperEntityColumns(parentFields);
-        strategy.setInclude(tables);
+        strategy.setSuperEntityColumns(PARENT_FIELDS);
+        strategy.setInclude(TABLES);
         strategy.setControllerMappingHyphenStyle(true);
 //        strategy.setTablePrefix(moduleName + "_");
         return strategy;
