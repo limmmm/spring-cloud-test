@@ -5,12 +5,11 @@ import com.lim.test.mybatisplus.role.model.enums.RoleTypeEnum;
 import lombok.Data;
 
 /**
- * @author Lim
- * @date 2020/2/17
+ * @author lim
+ * @since 2020/2/17
  */
 @Data
 public class RoleSaveDto {
-
 
     /**
      * 编码

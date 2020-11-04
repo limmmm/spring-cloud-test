@@ -6,8 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
 /**
- * @author Lim
- * @date 2020/2/17
+ * @author lim
+ * @since 2020/2/17
  */
 @Data
 public class Org {
@@ -16,12 +16,14 @@ public class Org {
     private Long id;
 
     /**
-     * '姓名'
+     * 姓名
      */
     private String name;
+
     /**
      * 状态
      */
     @TableLogic
     private Integer status;
+
 }

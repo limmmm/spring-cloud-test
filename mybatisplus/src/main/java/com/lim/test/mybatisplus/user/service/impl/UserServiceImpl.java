@@ -21,18 +21,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author Lim
- * @date 2020/2/11
+ * @author lim
+ * @since 2020/2/11
  */
 @Service
 @Primary
 @Slf4j
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
-    @Autowired
+    @Resource
     private UserMapper userMapper;
 
     @Override

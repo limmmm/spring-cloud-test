@@ -6,8 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
- * @author Lim
- * @date 2020/2/11
+ * @author lim
+ * @since 2020/2/11
  */
 @TableName(value = "user")
 @Data
@@ -19,5 +19,6 @@ public class User {
     private String name;
 
     private Integer age;
+
     private String email;
 }

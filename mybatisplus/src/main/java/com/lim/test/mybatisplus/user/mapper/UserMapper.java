@@ -11,8 +11,8 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 /**
- * @author Lim
- * @date 2020/2/11
+ * @author lim
+ * @since 2020/2/11
  */
 public interface UserMapper extends BaseMapper<User> {
 
@@ -46,4 +46,5 @@ public interface UserMapper extends BaseMapper<User> {
      * @return 记录
      */
     List<User> listConditionXml(@Param("userListDto") UserListDto userListDto);
+
 }

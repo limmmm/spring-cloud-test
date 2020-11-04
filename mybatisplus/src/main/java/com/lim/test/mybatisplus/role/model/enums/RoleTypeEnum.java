@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  *
- * @author Lim
- * @date 2020/2/19
+ * @author lim
+ * @since 2020/2/19
  */
 public enum RoleTypeEnum {
 

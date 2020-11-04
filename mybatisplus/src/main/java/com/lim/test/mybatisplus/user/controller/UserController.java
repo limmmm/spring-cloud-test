@@ -20,8 +20,10 @@ import java.util.List;
 
 /**
  * 用户
- * @author Lim
- * @date 2020/2/11
+ * 常用crud测试
+ *
+ * @author lim
+ * @since 2020/2/11
  */
 @RestController
 @RequestMapping("/user")

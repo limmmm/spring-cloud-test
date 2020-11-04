@@ -7,8 +7,8 @@ import com.lim.test.mybatisplus.org.model.entity.Org;
 import java.util.List;
 
 /**
- * @author Lim
- * @date 2020/2/17
+ * @author lim
+ * @since 2020/2/17
  */
 public interface IOrgService extends IService<Org> {
 
@@ -17,7 +17,6 @@ public interface IOrgService extends IService<Org> {
      * @return List<User>
      */
     List<Org> listAll();
-
 
     /**
      * 新增机构

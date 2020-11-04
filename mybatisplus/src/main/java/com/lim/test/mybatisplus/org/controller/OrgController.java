@@ -3,14 +3,21 @@ package com.lim.test.mybatisplus.org.controller;
 import com.lim.test.mybatisplus.org.model.dto.OrgSaveDto;
 import com.lim.test.mybatisplus.org.model.entity.Org;
 import com.lim.test.mybatisplus.org.service.IOrgService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 /**
  * 机构
- * @author Lim
- * @date 2020/2/17
+ * 自定义逻辑删除字段测试
+ *
+ * @author lim
+ * @since 2020/2/17
  */
 @RestController
 @RequestMapping("/org")

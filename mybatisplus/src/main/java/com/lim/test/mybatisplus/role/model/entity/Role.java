@@ -8,8 +8,8 @@ import lombok.Data;
 
 /**
  * 角色
- * @author Lim
- * @date 2020/2/17
+ * @author lim
+ * @since 2020/2/17
  */
 @Data
 public class Role {

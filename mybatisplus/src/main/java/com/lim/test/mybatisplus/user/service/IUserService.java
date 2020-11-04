@@ -11,8 +11,8 @@ import com.lim.test.mybatisplus.user.model.entity.User;
 import java.util.List;
 
 /**
- * @author Lim
- * @date 2020/2/11
+ * @author lim
+ * @since 2020/2/11
  */
 public interface IUserService extends IService<User> {
 
@@ -70,4 +70,5 @@ public interface IUserService extends IService<User> {
      * @return 影响的记录条数
      */
     Integer delete(Long id);
+
 }

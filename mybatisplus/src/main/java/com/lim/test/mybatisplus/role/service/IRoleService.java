@@ -7,8 +7,8 @@ import com.lim.test.mybatisplus.role.model.entity.Role;
 import java.util.List;
 
 /**
- * @author Lim
- * @date 2020/2/17
+ * @author lim
+ * @since 2020/2/17
  */
 public interface IRoleService extends IService<Role> {
 
@@ -32,4 +32,5 @@ public interface IRoleService extends IService<Role> {
      * @return 影响的记录条数
      */
     Integer delete(Long id);
+
 }

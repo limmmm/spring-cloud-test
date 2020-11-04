@@ -4,6 +4,9 @@ server:
     context-path: /mybatisplus
 
 spring:
+  application:
+    # 应用名称/日志文件名称
+    name: mybatisplus
   datasource:
     driver-class-name: com.p6spy.engine.spy.P6SpyDriver
     url: jdbc:p6spy:mysql://127.0.0.1:3306/test?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&zeroDateTimeBehavior=convertToNull
@@ -14,6 +17,6 @@ mybatis-plus:
   global-config:
     db-config:
       logic-delete-field: flag  #全局逻辑删除字段值
-      logic-delete-value: 0 # 逻辑已删除值(默认为 1)
-      logic-not-delete-value: 1 # 逻辑未删除值(默认为 0)
+      logic-delete-value: false # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: true # 逻辑未删除值(默认为 0)
   typeEnumsPackage: com.lim.test.mybatisplus.*.model.enums

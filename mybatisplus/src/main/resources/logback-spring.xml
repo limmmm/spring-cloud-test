@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" packagingData="true">
+    <!-- 日志文件输出路径，默认为当前路径 -->
+    <property name="log.home" value="."/>
+    <!-- 日志文件名称前缀 -->
+    <springProperty scope="context" name="log.fileName" source="spring.application.name" defaultValue="log"/>
+    <!-- 日志格式 -->
+    <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] [%level] %c{36}[%M:%L] -> %m%n"/>
+
+    <!-- 设置 logger context 名称,一旦设置不可改变，默认为default -->
+    <contextName>parking</contextName>
+
+    <!-- 日志输出到控制台 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are by default assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 滚动日志 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 正在记录的日志文件的路径及文件名 -->
+        <file>${log.home}/${log.fileName}.log</file>
+        <!--日志文件输出格式-->
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <!-- 日志记录器的滚动策略，按日期，按大小记录 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 归档文件名“.zip或.gz结尾”,表示归档文件自动压缩 -->
+            <FileNamePattern>${log.home}/logs/${log.fileName}%d{yyyyMMdd}.%i.log</FileNamePattern>
+            <!-- 单个文件大小设置为500M，可以使用word或notepad++打开，避免出现超大txt文件难以打开的情况 -->
+            <maxFileSize>500MB</maxFileSize>
+            <!-- 日志保留天数 -->
+            <maxHistory>60</maxHistory>
+            <!-- 文件总大小，超过则删除最旧的文件 -->
+            <totalSizeCap>30GB</totalSizeCap>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+    </appender>
+
+    <!-- 不同包的日志级别，与root level 相比取最大集 -->
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="com.baomidou" level= "INFO"/>
+    <logger name="com.lim" level="INFO"/>
+
+    <!-- 至多只能配置一个root -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>

@@ -5,8 +5,8 @@ import com.lim.test.mybatisplus.org.model.entity.Org;
 import com.lim.test.mybatisplus.user.model.entity.User;
 
 /**
- * @author Lim
- * @date 2020/2/11
+ * @author lim
+ * @since 2020/2/11
  */
 public interface OrgMapper extends BaseMapper<Org> {
 
