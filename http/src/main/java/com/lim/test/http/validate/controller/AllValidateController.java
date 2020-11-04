@@ -14,8 +14,8 @@ import com.lim.test.http.annoation.CannotHaveBlank;
  * 所有方法开启参数校验
  * Validated 为spring标准 基于 Spring's JSR-303
  *  Valid 为 javax标准 基于 JSR-303
- * @author Lim
- * @date 2020/2/22
+ * @author lim
+ * @since 2020/2/22
  */
 @Validated
 @Slf4j

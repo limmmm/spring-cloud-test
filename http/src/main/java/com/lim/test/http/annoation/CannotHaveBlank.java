@@ -6,8 +6,8 @@ import java.lang.annotation.*;
 
 /**
  * 自定义校验注解
- * @author Lim
- * 2019年4月22日
+ * @author lim
+ * @since 2019/4/22
  */
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
@@ -30,4 +30,5 @@ public @interface CannotHaveBlank {
     @interface List {
         CannotHaveBlank[] value();
     }
+
 }

@@ -12,13 +12,14 @@ import java.util.Map;
 
 /**
  * get参数接收测试
- * @author Lim
- * @date 2019/10/14
+ *
+ * @author lim
+ * @since 2019/10/14
  */
 @Slf4j
 @RestController
-@RequestMapping(value = "/gettest")
-public class GetTestController {
+@RequestMapping(value = "/get")
+public class GetController {
 
     /**
      * 500 参数类型不匹配
@@ -61,9 +62,16 @@ public class GetTestController {
         return JSONObject.toJSONString(map);
     }
 
+    /**
+     * 成功
+     * 使用 @DateTimeFormat 将接收参数按指定格式转化为javabean
+     *      WARN: 时间参数结束的注解与post方法不同
+     * 使用 @JsonFormat 将时间转化为指定格式字符串
+     */
     @GetMapping("/time")
     public UserDto time(UserDto userDto) {
         log.info("{}", userDto);
         return userDto;
     }
+
 }

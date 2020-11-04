@@ -2,3 +2,8 @@ server:
   port: 18081
   servlet:
     context-path: /http
+
+spring:
+  application:
+    # 应用名称/日志文件名称
+    name: http

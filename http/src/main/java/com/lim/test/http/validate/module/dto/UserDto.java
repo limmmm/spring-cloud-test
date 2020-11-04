@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
- * @author Lim
- * @date 2020/2/22
+ * @author lim
+ * @since 2020/2/22
  */
 @Data
 public class UserDto {
@@ -26,7 +26,7 @@ public class UserDto {
     private String sex;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss")
     private Date date;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -34,6 +34,7 @@ public class UserDto {
     private LocalDate localDate;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss")
     private LocalDateTime localDateTime;
+
 }

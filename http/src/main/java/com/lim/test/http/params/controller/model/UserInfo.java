@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 用户信息
  * @author Li Ming
- * @date 2020/7/16
+ * @since 2020/7/16
  */
 @Data
 public class UserInfo {

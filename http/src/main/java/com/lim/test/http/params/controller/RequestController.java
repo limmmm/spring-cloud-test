@@ -1,7 +1,7 @@
 package com.lim.test.http.params.controller;
 
 import com.lim.test.http.params.controller.model.UserInfo;
-import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,18 +22,18 @@ import java.util.Map;
  * request 请求参数传递测试
  *
  * @author Li Ming
- * @date 2020/7/22
+ * @since 2020/7/22
  */
 @RestController
 @RequestMapping("/request")
-public class RequestRestController {
+public class RequestController {
 
     /**
      * url传参
      * 适用于所有请求方式
      * 参数拼接在url后面，形如url?id=XXX&name=XXX
      */
-    @RequestMapping(value = "/mapping", method =
+    @RequestMapping(value = "/url", method =
             {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
     public String mapping(String id, String name) {
         return String.format("params: id: %s, name: %s", id, name);
@@ -44,7 +44,7 @@ public class RequestRestController {
      * 适用于所有请求方式
      * 参数拼接在url后面，形如url?userId=XXX&userName=XXX
      */
-    @RequestMapping(value = "/requestParam", method =
+    @RequestMapping(value = "/url", method =
             {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
     public String requestParam(@RequestParam("userId") String id, @RequestParam("userName") String name) {
         return String.format("params: id: %s, name: %s", id, name);
@@ -120,9 +120,10 @@ public class RequestRestController {
     @PostMapping("/file")
     public String file(HttpServletRequest request, @RequestParam("file") MultipartFile file, UserInfo userInfo) {
         // 文件为空或文件名为空则说明文件接收失败
-        if (file == null || StringUtils.isBlank(file.getOriginalFilename())) {
+        if (file == null || StringUtils.isEmpty(file.getOriginalFilename())) {
             return "file not exist";
         }
         return String.format("file: %s, userInfo: %s", file.getOriginalFilename(), userInfo);
     }
+
 }
