@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Lim
- * @date 2020/1/11
+ * @author lim
+ * @since 2020/1/11
  */
 @RestController
 @RequestMapping("/test")
@@ -22,4 +22,5 @@ public class DemoController {
         demoService.test();
         return "getTest";
     }
+
 }

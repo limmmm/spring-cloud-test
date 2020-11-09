@@ -6,15 +6,17 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 /**
- * @author Lim
- * @date 2020/3/4
+ * @author lim
+ * @since 2020/3/4
  */
 @Slf4j
 @Service
 @Primary
 public class DemoServiceImpl implements IDemoService {
+
     @Override
     public void test() {
         log.info("test finished");
     }
+
 }
