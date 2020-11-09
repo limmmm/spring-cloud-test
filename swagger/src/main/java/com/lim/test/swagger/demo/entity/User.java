@@ -5,17 +5,25 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * 用户信息
+ * @ApiModel 的 value将作为类型匹配依据
+ *
+ * @author lim
+ * @since 2020/3/1
  */
 @Data
-@ApiModel
+@ApiModel(description = "用户信息")
 public class User {
-    @ApiModelProperty(value = "主键")
+
+    @ApiModelProperty(value = "主键", example = "id1234")
     private String id;
-    @ApiModelProperty(name = "账号")
+
+    @ApiModelProperty(value = "账号", example = "test")
     private String account;
-    @ApiModelProperty("密码")
+
+    @ApiModelProperty(value = "密码", example = "password")
     private String password;
-    @ApiModelProperty("姓名")
+
+    @ApiModelProperty(value = "姓名", example = "user1")
     private String name;
+
 }
