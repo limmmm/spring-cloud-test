@@ -7,26 +7,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Lim
- * @date 2020/1/11
+ * nacos配置yaml
+ * @RefreshScope开启自动更新
+ *
+ * @author lim
+ * @since 2020/1/11
  */
 @RestController
 @RequestMapping("/test")
 @RefreshScope
 public class YamlController {
 
-//    @Value("${spring.application}")
-    private String application;
+    @Value("${spring.application.name}")
+    private String applicationName;
 
     @Value("${spring.datasource.url}")
     private String url;
 
-//    @Value("${user.name}")
-//    private String name;
+    @Value("${spring.datasource.username}")
+    private String name;
 
     @GetMapping
     public String getTest() {
-        return application + url;
+        return String.format("applicationName: %s, url: %s, name: %s", applicationName, url, name);
     }
 
 }
