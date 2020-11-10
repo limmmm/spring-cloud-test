@@ -1,0 +1,21 @@
+server:
+  port: 18181
+  servlet:
+    context-path: /nacosProvider
+
+# spring boot nacos相关配置，与springcloud独立
+# @NacosInjected需要此配置
+nacos:
+  discovery:
+    server-addr: 127.0.0.1:8848
+    namespace: ca672e82-df70-46f9-a470-97e2384a77b6
+
+spring:
+  application:
+    name: nacosProvider
+  cloud:
+    # spring cloud nacos相关配置，服务注册需要
+    nacos:
+      discovery:
+        server-addr: ${nacos.discovery.server-addr}
+        namespace: ${nacos.discovery.namespace}
