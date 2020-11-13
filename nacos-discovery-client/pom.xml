@@ -14,6 +14,7 @@
     <modules>
         <module>providerA</module>
         <module>providerB</module>
+        <module>customer</module>
     </modules>
 
 </project>
