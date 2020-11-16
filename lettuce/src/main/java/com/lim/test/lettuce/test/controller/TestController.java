@@ -2,30 +2,30 @@ package com.lim.test.lettuce.test.controller;
 
 import com.lim.test.lettuce.test.entity.Test;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * lettuce 测试
+ * lettuce 操作redis 测试
  *
  * @author lim
  * @since 2020-03-06
  */
 @Slf4j
 @RestController
-@RequestMapping("/ops")
-public class LettuceTestController {
+@RequestMapping("/test")
+public class TestController {
 
-    @Autowired
-    RedisTemplate redisTemplate;
+    @Resource
+    private RedisTemplate redisTemplate;
 
     /**
-     * 从redis中获取保存数据
+     * redis操作
      */
     @GetMapping
     public void ops() {
@@ -105,7 +105,7 @@ public class LettuceTestController {
         redisTemplate.opsForList().rightPush(key, test4);
 
         // 读取
-        List<Test> returnValue = (List<Test>) redisTemplate.opsForList().range(key, 0, -1);
+        List<Test> returnValue = redisTemplate.opsForList().range(key, 0, -1);
         log.info("listOps. key:{}, returnValue: {}", key, returnValue);
     }
 

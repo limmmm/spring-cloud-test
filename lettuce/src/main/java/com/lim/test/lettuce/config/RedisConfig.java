@@ -16,7 +16,7 @@ import java.io.Serializable;
  * redisTemplate 配置
  *
  * @author Li Ming
- * @date 2020/9/28
+ * @since 2020/9/28
  */
 @Configuration
 public class RedisConfig {

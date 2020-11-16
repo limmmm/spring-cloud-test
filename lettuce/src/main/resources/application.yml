@@ -1,13 +1,13 @@
 server:
-  port: 18089
+  port: 18088
   servlet:
     context-path: /lettuce
 
 spring:
   redis:
     host: 127.0.0.1
-    port: 6379
-    password: eBu1Fjjx
+    port: 16379
+    password: password
     database: 1
     lettuce:
       pool:

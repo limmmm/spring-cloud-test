@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
  * 测试java对象
  *
  * @author Li Ming
- * @date 2020/9/29
+ * @since 2020/9/29
  */
 @Data
 @NoArgsConstructor
@@ -18,7 +18,7 @@ public class Test {
     private Integer id;
 
     /**
-     * '姓名'
+     * 姓名
      */
     private String name;
 
