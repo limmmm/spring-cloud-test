@@ -6,8 +6,8 @@ import com.lim.test.tools.commonresponse.exception.ServiceException;
  * 操作中断
  * 程序不继续执行后续操作，直接返回错误信息，http状态码为200
  *
- * @author lim
- * @since 2020-09-27
+ * @author Lim
+ * @since 2020/09/27
  */
 public class ResultAssert {
 

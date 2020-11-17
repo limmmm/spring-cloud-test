@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * mybatis-plus 操作示例
  *
- * @author lim
+ * @author Lim
  * @since 2020/2/11
  */
 @SpringBootApplication

@@ -3,7 +3,7 @@ package com.lim.test.jetcache.demo.service;
 /**
  * jetcache 操作
  *
- * @author lim
+ * @author Lim
  * @since 2020/1/4
  */
 public interface IJetCacheService {

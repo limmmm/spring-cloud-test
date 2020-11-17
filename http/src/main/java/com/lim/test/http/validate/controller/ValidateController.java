@@ -12,7 +12,7 @@ import javax.validation.constraints.NotBlank;
  * 所有方法开启参数校验
  * Validated 为spring标准 基于 Spring's JSR-303
  *  Valid 为 javax标准 基于 JSR-303
- * @author lim
+ * @author Lim
  * @since 2020/2/22
  */
 @Slf4j

@@ -5,8 +5,8 @@ import lombok.Getter;
 /**
  * 返回结果枚举类
  *
- * @author lim
- * @since 2020-09-27
+ * @author Lim
+ * @since 2020/09/27
  */
 public enum ErrorCode {
 

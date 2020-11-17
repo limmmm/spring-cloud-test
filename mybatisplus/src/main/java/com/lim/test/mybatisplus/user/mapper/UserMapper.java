@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 /**
- * @author lim
+ * @author Lim
  * @since 2020/2/11
  */
 public interface UserMapper extends BaseMapper<User> {

@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 /**
  * activiti 测试
  *
- * @author lim
+ * @author Lim
  * @since 2020/3/3
  * WARN: 注意此类SecurityAutoConfiguration来源于activiti
  */

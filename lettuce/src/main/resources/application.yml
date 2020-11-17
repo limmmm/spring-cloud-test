@@ -4,6 +4,8 @@ server:
     context-path: /lettuce
 
 spring:
+  application:
+    name: lettuce
   redis:
     host: 127.0.0.1
     port: 16379

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 /**
  * 普通java类测试
  *
- * @author Li Ming
+ * @author Lim
  * @since 2020/10/22
  */
 @Slf4j

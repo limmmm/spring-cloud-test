@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * springboot基础测试
  *
- * @author lim
- * @since 2020/02/21s
+ * @author Lim
+ * @since 2020/02/21
  */
 @SpringBootApplication
 public class TestHttpApplication {

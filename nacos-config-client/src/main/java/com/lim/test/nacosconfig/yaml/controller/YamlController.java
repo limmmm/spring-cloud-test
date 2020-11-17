@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * nacos配置yaml
  * @RefreshScope开启自动更新
  *
- * @author lim
+ * @author Lim
  * @since 2020/1/11
  */
 @RestController

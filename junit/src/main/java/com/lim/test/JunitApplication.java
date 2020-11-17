@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 用于junit单元测试
  *
- * @author lim
- * @since 2020-03-06
+ * @author Lim
+ * @since 2020/03/06
  */
 @SpringBootApplication
 public class JunitApplication {

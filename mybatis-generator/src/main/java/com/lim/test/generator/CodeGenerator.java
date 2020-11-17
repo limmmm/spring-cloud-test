@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * mybatis 代码生成器
  *
- * @author lim
+ * @author Lim
  * @since 2020/2/27
  */
 public class CodeGenerator {

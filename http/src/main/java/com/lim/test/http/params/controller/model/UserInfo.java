@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * 用户信息
- * @author Li Ming
+ * @author Lim
  * @since 2020/7/16
  */
 @Data

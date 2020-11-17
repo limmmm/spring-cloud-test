@@ -21,7 +21,7 @@ import java.time.Duration;
 /**
  * cacheManager 配置
  *
- * @author lim
+ * @author Lim
  * @date 2020/10/29
  */
 @Configuration

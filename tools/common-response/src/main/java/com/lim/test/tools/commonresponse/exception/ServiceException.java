@@ -5,8 +5,8 @@ import com.lim.test.tools.commonresponse.response.ResponseBody;
 /**
  * 自定义业务异常类
  *
- * @author lim
- * @since 2020-09-27
+ * @author Lim
+ * @since 2020/09/27
  */
 public class ServiceException extends RuntimeException {
 

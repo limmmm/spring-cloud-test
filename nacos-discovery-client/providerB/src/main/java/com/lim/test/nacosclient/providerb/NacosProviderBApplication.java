@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 /**
  * nacos 服务B
  *
- * @author lim
+ * @author Lim
  * @since 2020/1/11
  */
 @SuppressWarnings("AlibabaClassNamingShouldBeCamel")

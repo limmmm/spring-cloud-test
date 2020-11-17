@@ -13,8 +13,8 @@ import java.util.List;
 /**
  * lettuce 操作redis 测试
  *
- * @author lim
- * @since 2020-03-06
+ * @author Lim
+ * @since 2020/03/06
  */
 @Slf4j
 @RestController

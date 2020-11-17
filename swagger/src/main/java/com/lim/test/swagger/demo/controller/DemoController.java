@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 /**
- * @author lim
+ * @author Lim
  * @since 2020/3/1
  */
 @Slf4j

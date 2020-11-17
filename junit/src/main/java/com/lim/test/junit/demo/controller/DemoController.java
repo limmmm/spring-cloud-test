@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 测试controller
  *
- * @author lim
- * @since  2020-01-11
+ * @author Lim
+ * @since  2020/01/11
  */
 @Slf4j
 @RestController

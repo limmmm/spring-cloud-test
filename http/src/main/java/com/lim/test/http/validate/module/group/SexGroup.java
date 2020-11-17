@@ -1,7 +1,7 @@
 package com.lim.test.http.validate.module.group;
 
 /**
- * @author lim
+ * @author Lim
  * @since 2020/2/25
  */
 public interface SexGroup {

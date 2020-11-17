@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * nacos config 测试
  *
- * @author lim
+ * @author Lim
  * @since 2020/1/11
  */
 @SpringBootApplication

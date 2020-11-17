@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * request 请求参数传递测试
  *
- * @author Li Ming
+ * @author Lim
  * @since 2020/7/22
  */
 @RestController

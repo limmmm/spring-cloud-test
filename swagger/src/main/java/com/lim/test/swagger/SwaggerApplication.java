@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * swagger test project
  * WARN: 访问地址：http://localhost:18085/swagger/swagger-ui/index.html
  *  或http://localhost:18085/swagger/swagger-ui/index.html
- * @author lim
+ * @author Lim
  * @since 2020/3/1
  */
 @SpringBootApplication

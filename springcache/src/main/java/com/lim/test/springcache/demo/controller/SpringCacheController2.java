@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * springcache 测试
  * service注入到controller中也可正常使用
  *
- * @author lim
+ * @author Lim
  * @since 2020/1/4
  */
 @RestController

@@ -6,7 +6,7 @@ import java.lang.annotation.*;
 
 /**
  * 自定义校验注解
- * @author lim
+ * @author Lim
  * @since 2019/4/22
  */
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER})

@@ -5,7 +5,7 @@ import com.lim.test.mybatisplus.role.model.enums.RoleTypeEnum;
 import lombok.Data;
 
 /**
- * @author lim
+ * @author Lim
  * @since 2020/2/17
  */
 @Data

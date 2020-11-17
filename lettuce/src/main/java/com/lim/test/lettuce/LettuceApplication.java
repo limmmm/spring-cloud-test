@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * lettuce测试启动类
  *
- * @author lim
+ * @author Lim
  * @since 2020/1/4
  */
 @SpringBootApplication

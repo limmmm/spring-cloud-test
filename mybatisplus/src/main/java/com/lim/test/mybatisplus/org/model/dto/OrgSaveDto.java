@@ -3,7 +3,7 @@ package com.lim.test.mybatisplus.org.model.dto;
 import lombok.Data;
 
 /**
- * @author lim
+ * @author Lim
  * @since 2020/2/17
  */
 @Data

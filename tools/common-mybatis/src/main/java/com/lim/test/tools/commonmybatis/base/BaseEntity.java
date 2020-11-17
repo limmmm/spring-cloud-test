@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 /**
  * 通用实体类字段
  *
- * @author lim
- * @since 2020-02-21
+ * @author Lim
+ * @since 2020/02/21
  */
 @Data
 public class BaseEntity {

@@ -7,8 +7,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * 实体类逻辑删除字段deleted枚举值
  *
- * @author lim
- * @since 2020-09-27
+ * @author Lim
+ * @since 2020/09/27
  */
 public enum EntityDeletedEnum {
 

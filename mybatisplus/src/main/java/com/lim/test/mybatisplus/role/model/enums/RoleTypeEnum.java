@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  *
- * @author lim
+ * @author Lim
  * @since 2020/2/19
  */
 public enum RoleTypeEnum {

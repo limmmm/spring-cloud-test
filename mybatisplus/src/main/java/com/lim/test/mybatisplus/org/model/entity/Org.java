@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
 /**
- * @author lim
+ * @author Lim
  * @since 2020/2/17
  */
 @Data

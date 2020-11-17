@@ -15,7 +15,7 @@ import java.io.Serializable;
 /**
  * redisTemplate 配置
  *
- * @author Li Ming
+ * @author Lim
  * @since 2020/9/28
  */
 @Configuration

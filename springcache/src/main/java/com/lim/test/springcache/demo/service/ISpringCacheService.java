@@ -5,7 +5,7 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 /**
  * spring cache 操作
  *
- * @author lim
+ * @author Lim
  * @since 2020/1/4
  */
 public interface ISpringCacheService {

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 /**
  * 测试java对象
  *
- * @author Li Ming
+ * @author Lim
  * @since 2020/9/29
  */
 @Data

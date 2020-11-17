@@ -7,7 +7,7 @@ import com.lim.test.mybatisplus.org.model.entity.Org;
 import java.util.List;
 
 /**
- * @author lim
+ * @author Lim
  * @since 2020/2/17
  */
 public interface IOrgService extends IService<Org> {

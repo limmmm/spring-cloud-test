@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
- * @author lim
+ * @author Lim
  * @since 2020/2/11
  */
 @TableName(value = "user")

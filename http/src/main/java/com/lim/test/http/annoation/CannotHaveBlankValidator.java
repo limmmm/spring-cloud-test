@@ -5,7 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 
 /**
  * 自定义校验注解实现
- * @author lim
+ * @author Lim
  * @since 2019/4/22
  */
 public class CannotHaveBlankValidator implements ConstraintValidator<CannotHaveBlank, String>{

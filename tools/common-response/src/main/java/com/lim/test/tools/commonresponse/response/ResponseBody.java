@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 /**
  * 返回结果结构封装
  *
- * @author lim
- * @since 2020-09-27
+ * @author Lim
+ * @since 2020/09/27
  */
 @Data
 @NoArgsConstructor

@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * nacos 消费者
  *
- * @author lim
+ * @author Lim
  * @since 2020/1/11
  */
 @SuppressWarnings("AlibabaClassNamingShouldBeCamel")

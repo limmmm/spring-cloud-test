@@ -3,7 +3,7 @@ package com.lim.test.junit.demo.service;
 /**
  * 测试service
  *
- * @author lim
+ * @author Lim
  * @since 2020/7/8
  */
 public interface IDemoService {

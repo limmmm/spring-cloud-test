@@ -7,7 +7,7 @@ import com.lim.test.mybatisplus.role.model.entity.Role;
 import java.util.List;
 
 /**
- * @author lim
+ * @author Lim
  * @since 2020/2/17
  */
 public interface IRoleService extends IService<Role> {

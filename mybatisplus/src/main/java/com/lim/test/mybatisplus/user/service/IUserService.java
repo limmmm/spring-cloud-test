@@ -11,7 +11,7 @@ import com.lim.test.mybatisplus.user.model.entity.User;
 import java.util.List;
 
 /**
- * @author lim
+ * @author Lim
  * @since 2020/2/11
  */
 public interface IUserService extends IService<User> {

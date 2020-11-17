@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 测试实例controller
  *
- * @author lim
+ * @author Lim
  * @since 2020/1/11
  */
 @RestController

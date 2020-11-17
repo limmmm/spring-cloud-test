@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * mybatis分页配置
  * 启动类应放在包com.lim.test下
  *
- * @author lim
- * @since 2020-02-20
+ * @author Lim
+ * @since 2020/02/20
  */
 @EnableTransactionManagement
 @Configuration

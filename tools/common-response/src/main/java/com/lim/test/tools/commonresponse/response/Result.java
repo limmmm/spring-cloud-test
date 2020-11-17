@@ -3,8 +3,8 @@ package com.lim.test.tools.commonresponse.response;
 /**
  * Http 返回结果封装
  *
- * @author lim
- * @since 2020-09-27
+ * @author Lim
+ * @since 2020/09/27
  */
 public class Result {
 

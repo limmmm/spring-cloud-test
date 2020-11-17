@@ -16,7 +16,7 @@ import java.util.List;
  * 角色
  * 枚举功能测试
  *
- * @author lim
+ * @author Lim
  * @since 2020/2/17
  */
 @RestController
