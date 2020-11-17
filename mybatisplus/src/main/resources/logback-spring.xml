@@ -8,7 +8,7 @@
     <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] [%level] %c{36}[%M:%L] -> %m%n"/>
 
     <!-- 设置 logger context 名称,一旦设置不可改变，默认为default -->
-    <contextName>parking</contextName>
+    <contextName>${log.fileName}</contextName>
 
     <!-- 日志输出到控制台 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
