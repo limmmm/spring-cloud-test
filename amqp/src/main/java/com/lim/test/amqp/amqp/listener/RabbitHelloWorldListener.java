@@ -6,8 +6,11 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @author Li Ming
- * @date 2020/8/27
+ * 队列监听
+ * WARN: 消息被消费后即从消息队列中删除，测试时视情况关闭监听器
+ *
+ * @author Lim
+ * @since 2020/8/27
  */
 @Component
 @RabbitListener(queues = {"HelloWorldQueue", "HelloQueue"})
@@ -18,4 +21,5 @@ public class RabbitHelloWorldListener {
     public void receiveHelloWorld(String queueMessage) {
         log.info("Received message:{}", queueMessage);
     }
+
 }
