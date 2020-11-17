@@ -21,69 +21,72 @@
         <!-- db -->
         <mybatis.plus.version>3.3.1</mybatis.plus.version>
         <p6spy.version>3.8.0</p6spy.version>
-        <mysql-connector.version>5.1.4</mysql-connector.version>
+        <mysql-connector.version>8.0.21</mysql-connector.version>
 
         <!-- tools -->
         <lombok.version>1.18.4</lombok.version>
-        <com.alibaba.fastjson>1.2.62</com.alibaba.fastjson>
-        <springfox-swagger.version>2.9.2</springfox-swagger.version>
+        <com.alibaba.fastjson>1.2.74</com.alibaba.fastjson>
+        <springfox-swagger.version>3.0.0</springfox-swagger.version>
+        <jetcache.version>2.6.0</jetcache.version>
+        <redis.clients.jedis.version>2.9.0</redis.clients.jedis.version>
+        <org.freemarker.version>2.3.29</org.freemarker.version>
+        <org.apache.velocity.version>2.2</org.apache.velocity.version>
+        <com.ibeetl.version>3.0.19.RELEASE</com.ibeetl.version>
+        <activiti.version>7.1.0.M6</activiti.version>
+        <hutool.version>5.4.5</hutool.version>
 
         <!-- nacos -->
-        <com.alibaba.boot.nacos>0.2.7</com.alibaba.boot.nacos>
-
-        <activiti.version>7.1.0.M6</activiti.version>
+        <nacos.discovery.version>2.2.3.RELEASE</nacos.discovery.version>
+        <nacos.discovery.starter.version>0.2.7</nacos.discovery.starter.version>
     </properties>
 
     <modules>
         <module>tools</module>
 
         <module>junit</module>
-        <!--        <module>base</module>
-                <module>http</module>
-                <module>springcache</module>
-                <module>jetcache</module>
-                <module>mybatisplus</module>
-                <module>swagger</module>
-                <module>activiti</module>
-                <module>nacos-config-client</module>
-                <module>nacos-discovery-client</module>
-                <module>lettuce</module>
-                <module>amqp</module>-->
-<!--        <module>mybatis-generator</module>-->
+        <module>base</module>
+        <module>http</module>
+        <module>springcache</module>
+        <module>jetcache</module>
+        <module>mybatisplus</module>
+        <module>swagger</module>
+        <module>activiti</module>
+        <module>nacos-config-client</module>
+        <module>nacos-discovery-client</module>
+        <module>lettuce</module>
+        <module>amqp</module>
+
+        <module>mybatis-generator</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
-            <!-- spring -->
-<!--            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-commons</artifactId>
-                <version>2.2.1.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-            </dependency>-->
-
             <!-- db -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis.plus.version}</version>
             </dependency>
+            <dependency>
+                <groupId>p6spy</groupId>
+                <artifactId>p6spy</artifactId>
+                <version>${p6spy.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
 
             <!-- 一方库 -->
             <dependency>
                 <groupId>com.lim.test</groupId>
                 <artifactId>common-response</artifactId>
+                <version>${com.lim.test.module.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lim.test</groupId>
+                <artifactId>common-mybatis</artifactId>
                 <version>${com.lim.test.module.version}</version>
             </dependency>
 
@@ -98,32 +101,71 @@
                 <artifactId>fastjson</artifactId>
                 <version>${com.alibaba.fastjson}</version>
             </dependency>
+            <dependency>
+                <groupId>com.alicp.jetcache</groupId>
+                <artifactId>jetcache-starter-redis-lettuce</artifactId>
+                <version>${jetcache.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${redis.clients.jedis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${org.freemarker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${org.apache.velocity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ibeetl</groupId>
+                <artifactId>beetl</artifactId>
+                <version>${com.ibeetl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox-swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.activiti</groupId>
+                <artifactId>activiti-spring-boot-starter</artifactId>
+                <version>${activiti.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-http</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
 
             <!-- nacos -->
             <dependency>
-                <groupId>com.alibaba.boot</groupId>
-                <artifactId>nacos-config-spring-boot-starter</artifactId>
-                <version>${com.alibaba.boot.nacos}</version>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>${nacos.discovery.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${nacos.discovery.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.boot</groupId>
                 <artifactId>nacos-discovery-spring-boot-starter</artifactId>
-                <version>${com.alibaba.boot.nacos}</version>
+                <version>${nacos.discovery.starter.version}</version>
             </dependency>
-<!--            <dependency>-->
-<!--                <groupId>com.alibaba.cloud</groupId>-->
-<!--                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
-<!--                <version>2.2.1.RELEASE</version>-->
-<!--            </dependency>-->
 
         </dependencies>
     </dependencyManagement>
-
-<!--        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>-->
 
     <packaging>pom</packaging>
 
