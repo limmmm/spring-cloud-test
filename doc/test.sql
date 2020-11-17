@@ -3,7 +3,7 @@ create table org
   id     bigint(64)  not null comment '主键ID'
     primary key,
   name   varchar(30) null comment '姓名',
-  status smallint(6) null comment '状态'
+  status tinyint(1)  null comment '状态'
 );
 
 INSERT INTO test.org (id, name, status) VALUES (1316941130838859771, '机构1', null);
@@ -13,12 +13,12 @@ INSERT INTO test.org (id, name, status) VALUES (1316941130838859774, '机构4', 
 INSERT INTO test.org (id, name, status) VALUES (1316942123269902338, '机构2', 0);
 create table role
 (
-  id   bigint(64)  not null comment '主键ID'
+  id   bigint(64)           not null comment '主键ID'
     primary key,
-  code varchar(30) null comment '编码',
-  name varchar(30) null comment '名称',
-  flag smallint(6) null comment '删除标记',
-  type int         null comment '类别'
+  code varchar(30)          null comment '编码',
+  name varchar(30)          null comment '名称',
+  flag tinyint(1) default 0 null comment '删除标记',
+  type int                  null comment '类别'
 );
 
 INSERT INTO test.role (id, code, name, flag, type) VALUES (1316941130838859661, 'admin', '管理员3', 1, 3);
