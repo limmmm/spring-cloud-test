@@ -1,15 +1,18 @@
 package com.lim.test.http.params.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.lim.test.http.params.controller.model.UserInfo;
 import com.lim.test.http.validate.module.dto.UserDto;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**
@@ -53,7 +56,7 @@ public class PostController {
     }
 
     /**
-     * 成功
+     * 成功, 适用post/put
      * body raw json 可正常接收
      */
     @PostMapping("/map2")
@@ -63,7 +66,7 @@ public class PostController {
     }
 
     /**
-     * 成功
+     * 成功, 适用post/put
      * 使用params（url拼接）可以接收参数
      * 使用body formDate 可接收参数
      * 使用body x-www-form-urlencoded 可接收参数
@@ -85,4 +88,19 @@ public class PostController {
         log.info("{}", userDto);
         return userDto;
     }
+
+    /**
+     * 保存文件
+     * 采用post form-data形式
+     * 无额外参数，userInfo可去掉
+     */
+    @PostMapping("/file")
+    public String file(HttpServletRequest request, @RequestParam("file") MultipartFile file, UserInfo userInfo) {
+        // 文件为空或文件名为空则说明文件接收失败
+        if (file == null || StringUtils.isEmpty(file.getOriginalFilename())) {
+            return "file not exist";
+        }
+        return String.format("file: %s, userInfo: %s", file.getOriginalFilename(), userInfo);
+    }
+
 }

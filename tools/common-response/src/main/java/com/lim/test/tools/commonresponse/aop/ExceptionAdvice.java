@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import javax.validation.ConstraintViolationException;
 import java.util.List;
 
 /**
@@ -60,6 +61,18 @@ public class ExceptionAdvice {
         List<ObjectError> allErrors = e.getBindingResult().getAllErrors();
         log.error("【参数校验失败】{}", allErrors, e);
         return Result.fail(ErrorCode.ERROR_PARAMS, allErrors.get(0).getDefaultMessage());
+    }
+
+    /**
+     * 参数校验异常处理
+     * 返回第一条错误信息
+     */
+    @ExceptionHandler(ConstraintViolationException.class)
+    @ResponseStatus(HttpStatus.OK)
+    @org.springframework.web.bind.annotation.ResponseBody
+    public ResponseBody<?> constraintViolationExceptionHandler(ConstraintViolationException e) {
+        log.error("【参数校验失败】{}", e.getMessage(), e);
+        return Result.fail(ErrorCode.ERROR_PARAMS, e.getMessage());
     }
 
     /**

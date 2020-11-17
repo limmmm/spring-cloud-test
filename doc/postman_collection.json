@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "85f28870-5b98-4fa1-a391-e0857e34008c",
-		"name": "springCloudTest",
+		"name": "spring-cloud-test",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -9,252 +9,18 @@
 			"name": "base",
 			"item": [
 				{
-					"name": "url传参",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base}}/request/mapping?id=100&name=lim",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"request",
-								"mapping"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "100"
-								},
-								{
-									"key": "name",
-									"value": "lim"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "url传参，传输于接收的参数名称不同",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "{{base}}/request/requestParam?userId=100&userName=lim",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"request",
-								"requestParam"
-							],
-							"query": [
-								{
-									"key": "userId",
-									"value": "100"
-								},
-								{
-									"key": "userName",
-									"value": "lim"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "url路径传参",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base}}/request/pathVariable/100/lim",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"request",
-								"pathVariable",
-								"100",
-								"lim"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "request body payload传参",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"100\",\r\n    \"name\": \"lim\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base}}/request/requestBody",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"request",
-								"requestBody"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "request body form-urlencoded传参",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "id",
-									"value": "300",
-									"type": "text"
-								},
-								{
-									"key": "name",
-									"value": "lim",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{base}}/request/requestBodyForm",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"request",
-								"requestBodyForm"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "request",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"100\",\r\n    \"name\": \"lim\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base}}/request/request?userId=100&userName=lim",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"request",
-								"request"
-							],
-							"query": [
-								{
-									"key": "userId",
-									"value": "100"
-								},
-								{
-									"key": "userName",
-									"value": "lim"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "file",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file",
-									"type": "file",
-									"src": "/C:/Users/admin/Pictures/tp-link.jpg"
-								},
-								{
-									"key": "userId",
-									"value": "123",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{base}}/request/file",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"request",
-								"file"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "rabbitMq触发",
+					"name": "测试controller",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base}}/rabbit/helloworld",
-							"host": [
-								"{{base}}"
-							],
-							"path": [
-								"rabbit",
-								"helloworld"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "lettuce",
-			"item": [
-				{
-					"name": "lettuce操作测试",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{server}}:{{preLettuce}}/ops",
+							"raw": "{{server}}:{{preBase}}/test",
 							"host": [
 								"{{server}}"
 							],
-							"port": "{{preLettuce}}",
+							"port": "{{preBase}}",
 							"path": [
-								"ops"
+								"test"
 							]
 						}
 					},
@@ -270,48 +36,84 @@
 					"name": "http请求",
 					"item": [
 						{
-							"name": "get测试json",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{server}}:{{portHttp}}/http/gettest/json2?a=1&b=2",
-									"host": [
-										"{{server}}"
-									],
-									"port": "{{portHttp}}",
-									"path": [
-										"http",
-										"gettest",
-										"json2"
-									],
-									"query": [
-										{
-											"key": "a",
-											"value": "1"
-										},
-										{
-											"key": "b",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"response": [
+							"name": "get测试",
+							"item": [
 								{
-									"name": "get测试json",
-									"originalRequest": {
+									"name": "JSONObject",
+									"request": {
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{server}}:{{portHttp}}/http/gettest/json2?a=1&b=2",
+											"raw": "{{server}}:{{preHttp}}/get/json?a=1&b=2",
 											"host": [
 												"{{server}}"
 											],
-											"port": "{{portHttp}}",
+											"port": "{{preHttp}}",
 											"path": [
-												"http",
-												"gettest",
+												"get",
+												"json"
+											],
+											"query": [
+												{
+													"key": "a",
+													"value": "1"
+												},
+												{
+													"key": "b",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "get测试json",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{server}}:{{portHttp}}/http/gettest/json2?a=1&b=2",
+													"host": [
+														"{{server}}"
+													],
+													"port": "{{portHttp}}",
+													"path": [
+														"http",
+														"gettest",
+														"json2"
+													],
+													"query": [
+														{
+															"key": "a",
+															"value": "1"
+														},
+														{
+															"key": "b",
+															"value": "2"
+														}
+													]
+												}
+											},
+											"_postman_previewlanguage": "json",
+											"header": [],
+											"cookie": [],
+											"body": "{\n    \"result\": \"2\" // 结果\n}"
+										}
+									]
+								},
+								{
+									"name": "@RequestParam JSONObject",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{server}}:{{preHttp}}/get/json2?a=1&b=2",
+											"host": [
+												"{{server}}"
+											],
+											"port": "{{preHttp}}",
+											"path": [
+												"get",
 												"json2"
 											],
 											"query": [
@@ -326,125 +128,391 @@
 											]
 										}
 									},
-									"_postman_previewlanguage": "json",
-									"header": [],
-									"cookie": [],
-									"body": "{\n    \"result\": \"2\" // 结果\n}"
-								}
-							]
-						},
-						{
-							"name": "get测试map",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{server}}:{{portHttp}}/http/gettest/map2?a=1&b=2",
-									"host": [
-										"{{server}}"
-									],
-									"port": "{{portHttp}}",
-									"path": [
-										"http",
-										"gettest",
-										"map2"
-									],
-									"query": [
+									"response": [
 										{
-											"key": "a",
-											"value": "1"
-										},
-										{
-											"key": "b",
-											"value": "2"
+											"name": "get测试json",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{server}}:{{portHttp}}/http/gettest/json2?a=1&b=2",
+													"host": [
+														"{{server}}"
+													],
+													"port": "{{portHttp}}",
+													"path": [
+														"http",
+														"gettest",
+														"json2"
+													],
+													"query": [
+														{
+															"key": "a",
+															"value": "1"
+														},
+														{
+															"key": "b",
+															"value": "2"
+														}
+													]
+												}
+											},
+											"_postman_previewlanguage": "json",
+											"header": [],
+											"cookie": [],
+											"body": "{\n    \"result\": \"2\" // 结果\n}"
 										}
 									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "post测试json",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"a\":\"1\"}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
 								},
-								"url": {
-									"raw": "{{server}}:{{portHttp}}/http/posttest/json2",
-									"host": [
-										"{{server}}"
-									],
-									"port": "{{portHttp}}",
-									"path": [
-										"http",
-										"posttest",
-										"json2"
-									],
-									"query": [
-										{
-											"key": "1",
-											"value": "2",
-											"disabled": true
+								{
+									"name": "Map",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{server}}:{{preHttp}}/get/map?a=1&b=2",
+											"host": [
+												"{{server}}"
+											],
+											"port": "{{preHttp}}",
+											"path": [
+												"get",
+												"map"
+											],
+											"query": [
+												{
+													"key": "a",
+													"value": "1"
+												},
+												{
+													"key": "b",
+													"value": "2"
+												}
+											]
 										}
-									]
+									},
+									"response": []
+								},
+								{
+									"name": "@RequestParam Map",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{server}}:{{preHttp}}/get/map2?a=1&b=2",
+											"host": [
+												"{{server}}"
+											],
+											"port": "{{preHttp}}",
+											"path": [
+												"get",
+												"map2"
+											],
+											"query": [
+												{
+													"key": "a",
+													"value": "1"
+												},
+												{
+													"key": "b",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "time",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{server}}:{{preHttp}}/get/time?date=2020-01-02 03:04:05&localDate=2020-01-02&localDateTime=2020-01-02 03:04:05",
+											"host": [
+												"{{server}}"
+											],
+											"port": "{{preHttp}}",
+											"path": [
+												"get",
+												"time"
+											],
+											"query": [
+												{
+													"key": "date",
+													"value": "2020-01-02 03:04:05"
+												},
+												{
+													"key": "localDate",
+													"value": "2020-01-02"
+												},
+												{
+													"key": "localDateTime",
+													"value": "2020-01-02 03:04:05"
+												}
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
 						},
 						{
-							"name": "post测试map",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"url": {
-									"raw": "{{server}}:{{portHttp}}/http/posttest/map3?b=2",
-									"host": [
-										"{{server}}"
-									],
-									"port": "{{portHttp}}",
-									"path": [
-										"http",
-										"posttest",
-										"map3"
-									],
-									"query": [
-										{
-											"key": "b",
-											"value": "2"
+							"name": "post",
+							"item": [
+								{
+									"name": "JSONObject",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"a\": \"2\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server}}:{{preHttp}}/post/json?a=1",
+											"host": [
+												"{{server}}"
+											],
+											"port": "{{preHttp}}",
+											"path": [
+												"post",
+												"json"
+											],
+											"query": [
+												{
+													"key": "a",
+													"value": "1"
+												}
+											]
 										}
-									]
+									},
+									"response": []
+								},
+								{
+									"name": "@RequestBody JSONObject",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"a\": \"2\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server}}:{{preHttp}}/post/json2?a=1",
+											"host": [
+												"{{server}}"
+											],
+											"port": "{{preHttp}}",
+											"path": [
+												"post",
+												"json2"
+											],
+											"query": [
+												{
+													"key": "a",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Map",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"a\": \"2\"\r\n}"
+										},
+										"url": {
+											"raw": "{{server}}:{{preHttp}}/post/map?a=1",
+											"host": [
+												"{{server}}"
+											],
+											"port": "{{preHttp}}",
+											"path": [
+												"post",
+												"map"
+											],
+											"query": [
+												{
+													"key": "a",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "@RequestBody Map",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"a\": \"2\"\r\n}"
+										},
+										"url": {
+											"raw": "{{server}}:{{preHttp}}/post/map2?a=1",
+											"host": [
+												"{{server}}"
+											],
+											"port": "{{preHttp}}",
+											"path": [
+												"post",
+												"map2"
+											],
+											"query": [
+												{
+													"key": "a",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "@RequestParam Map",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "a",
+													"value": "4",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}:{{preHttp}}/post/map3",
+											"host": [
+												"{{server}}"
+											],
+											"port": "{{preHttp}}",
+											"path": [
+												"post",
+												"map3"
+											],
+											"query": [
+												{
+													"key": "a",
+													"value": "1",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "time",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"date\": \"2020/01/02 03:04:05\",\r\n    \"localDate\": \"2020/01/02\",\r\n    \"localDateTime\": \"2020/01/02 03:04:05\"\r\n}"
+										},
+										"url": {
+											"raw": "{{server}}:{{preHttp}}/post/time",
+											"host": [
+												"{{server}}"
+											],
+											"port": "{{preHttp}}",
+											"path": [
+												"post",
+												"time"
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -459,13 +527,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{server}}:{{portHttp}}/http/allvalidate/test5?name=a b",
+									"raw": "{{server}}:{{preHttp}}/allvalidate/test5?name=a b",
 									"host": [
 										"{{server}}"
 									],
-									"port": "{{portHttp}}",
+									"port": "{{preHttp}}",
 									"path": [
-										"http",
 										"allvalidate",
 										"test5"
 									],
@@ -485,13 +552,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{server}}:{{portHttp}}/http/validate/test3?age=aaa",
+									"raw": "{{server}}:{{preHttp}}/validate/test3?age=aaa",
 									"host": [
 										"{{server}}"
 									],
-									"port": "{{portHttp}}",
+									"port": "{{preHttp}}",
 									"path": [
-										"http",
 										"validate",
 										"test3"
 									],
@@ -523,13 +589,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{server}}:{{portHttp}}/http/responsetest/str",
+									"raw": "{{server}}:{{preHttp}}/responsetest/str",
 									"host": [
 										"{{server}}"
 									],
-									"port": "{{portHttp}}",
+									"port": "{{preHttp}}",
 									"path": [
-										"http",
 										"responsetest",
 										"str"
 									]
@@ -543,13 +608,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{server}}:{{portHttp}}/http/responsetest/obj",
+									"raw": "{{server}}:{{preHttp}}/responsetest/obj",
 									"host": [
 										"{{server}}"
 									],
-									"port": "{{portHttp}}",
+									"port": "{{preHttp}}",
 									"path": [
-										"http",
 										"responsetest",
 										"obj"
 									]
@@ -563,13 +627,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{server}}:{{portHttp}}/http/responsetest/err",
+									"raw": "{{server}}:{{preHttp}}/responsetest/err",
 									"host": [
 										"{{server}}"
 									],
-									"port": "{{portHttp}}",
+									"port": "{{preHttp}}",
 									"path": [
-										"http",
 										"responsetest",
 										"err"
 									]
@@ -588,20 +651,19 @@
 			"name": "springCache",
 			"item": [
 				{
-					"name": "保存",
+					"name": "cacheName1",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{server}}:{{portSpringCache}}/springcache/demo/test?key=1&value=a",
+							"raw": "{{server}}:{{preSpringCache}}/test/cacheName1?key=1&value=a",
 							"host": [
 								"{{server}}"
 							],
-							"port": "{{portSpringCache}}",
+							"port": "{{preSpringCache}}",
 							"path": [
-								"springcache",
-								"demo",
-								"test"
+								"test",
+								"cacheName1"
 							],
 							"query": [
 								{
@@ -618,30 +680,223 @@
 					"response": []
 				},
 				{
-					"name": "保存(默认过期时间)",
+					"name": "cacheName2",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{server}}:{{portSpringCache}}/springcache/demo/test/defalutExpire?key=2&value=b",
+							"raw": "{{server}}:{{preSpringCache}}/test/cacheName2?key=1&value=b",
 							"host": [
 								"{{server}}"
 							],
-							"port": "{{portSpringCache}}",
+							"port": "{{preSpringCache}}",
 							"path": [
-								"springcache",
-								"demo",
 								"test",
-								"defalutExpire"
+								"cacheName2"
 							],
 							"query": [
 								{
 									"key": "key",
-									"value": "2"
+									"value": "1"
 								},
 								{
 									"key": "value",
 									"value": "b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cacheName3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preSpringCache}}/test/cacheName3?key=1&value=c",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preSpringCache}}",
+							"path": [
+								"test",
+								"cacheName3"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "1"
+								},
+								{
+									"key": "value",
+									"value": "c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cacheManager5m",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preSpringCache}}/test/cacheManager5m?key=1&value=5m",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preSpringCache}}",
+							"path": [
+								"test",
+								"cacheManager5m"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "1"
+								},
+								{
+									"key": "value",
+									"value": "5m"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "defaultName",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preSpringCache}}/test/defaultName?key=1&value=d",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preSpringCache}}",
+							"path": [
+								"test",
+								"defaultName"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "1"
+								},
+								{
+									"key": "value",
+									"value": "d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "defaultName",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preSpringCache}}/test/defaultName?key=1&value=e",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preSpringCache}}",
+							"path": [
+								"test",
+								"defaultName"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "1"
+								},
+								{
+									"key": "value",
+									"value": "e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "defaultName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preSpringCache}}/test/defaultName?key=1",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preSpringCache}}",
+							"path": [
+								"test",
+								"defaultName"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "defaultName",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preSpringCache}}/test/defaultName?key=1",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preSpringCache}}",
+							"path": [
+								"test",
+								"defaultName"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cacheName1 controller2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preSpringCache}}/test2/cacheName1?key=1&value=a",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preSpringCache}}",
+							"path": [
+								"test2",
+								"cacheName1"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "1"
+								},
+								{
+									"key": "value",
+									"value": "a"
 								}
 							]
 						}
@@ -655,25 +910,24 @@
 			"name": "jetCache",
 			"item": [
 				{
-					"name": "保存",
+					"name": "保存(自定义过期时间)",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{server}}:{{portJetCache}}/jetcache/demo/test?key=449f3370-4cf6-11e8-85c3-45ad5e3a2bd7&value=a",
+							"raw": "{{server}}:{{preJetCache}}/demo/test?key=key1&value=a",
 							"host": [
 								"{{server}}"
 							],
-							"port": "{{portJetCache}}",
+							"port": "{{preJetCache}}",
 							"path": [
-								"jetcache",
 								"demo",
 								"test"
 							],
 							"query": [
 								{
 									"key": "key",
-									"value": "449f3370-4cf6-11e8-85c3-45ad5e3a2bd7"
+									"value": "key1"
 								},
 								{
 									"key": "value",
@@ -690,13 +944,12 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{server}}:{{portJetCache}}/jetcache/demo/test/defalutExpire?key=2&value=b",
+							"raw": "{{server}}:{{preJetCache}}/demo/test/defalutExpire?key=key2&value=b",
 							"host": [
 								"{{server}}"
 							],
-							"port": "{{portJetCache}}",
+							"port": "{{preJetCache}}",
 							"path": [
-								"jetcache",
 								"demo",
 								"test",
 								"defalutExpire"
@@ -704,7 +957,94 @@
 							"query": [
 								{
 									"key": "key",
-									"value": "2"
+									"value": "key2"
+								},
+								{
+									"key": "value",
+									"value": "b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "修改",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preJetCache}}/demo/test?key=key1&value=b",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preJetCache}}",
+							"path": [
+								"demo",
+								"test"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "key1"
+								},
+								{
+									"key": "value",
+									"value": "b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preJetCache}}/demo/test?key=key1&value=b",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preJetCache}}",
+							"path": [
+								"demo",
+								"test"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "key1"
+								},
+								{
+									"key": "value",
+									"value": "b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preJetCache}}/demo/test?key=key1&value=b",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preJetCache}}",
+							"path": [
+								"demo",
+								"test"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "key1"
 								},
 								{
 									"key": "value",
@@ -721,13 +1061,12 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{server}}:{{portJetCache}}/jetcache/demo/test/postMethodName?key=1&value=a",
+							"raw": "{{server}}:{{preJetCache}}/demo/test/postMethodName?key=key3&value=a",
 							"host": [
 								"{{server}}"
 							],
-							"port": "{{portJetCache}}",
+							"port": "{{preJetCache}}",
 							"path": [
-								"jetcache",
 								"demo",
 								"test",
 								"postMethodName"
@@ -735,7 +1074,7 @@
 							"query": [
 								{
 									"key": "key",
-									"value": "1"
+									"value": "key3"
 								},
 								{
 									"key": "value",
@@ -1165,19 +1504,19 @@
 			"name": "swagger",
 			"item": [
 				{
-					"name": "test",
+					"name": "get测试接口",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{server}}:{{portActiviti}}/activiti/test",
+							"raw": "{{server}}:{{preSwagger}}/demo/hello",
 							"host": [
 								"{{server}}"
 							],
-							"port": "{{portActiviti}}",
+							"port": "{{preSwagger}}",
 							"path": [
-								"activiti",
-								"test"
+								"demo",
+								"hello"
 							]
 						}
 					},
@@ -1190,20 +1529,316 @@
 			"name": "activiti",
 			"item": [
 				{
-					"name": "获取用户信息",
+					"name": "测试接口",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{server}}:{{portSwagger}}/swagger/user/list",
+							"raw": "{{server}}:{{preActiviti}}/test",
 							"host": [
 								"{{server}}"
 							],
-							"port": "{{portSwagger}}",
+							"port": "{{preActiviti}}",
 							"path": [
-								"swagger",
-								"user",
-								"list"
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "nacosConfig",
+			"item": [
+				{
+					"name": "测试接口",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preNacosConfig}}/test",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preNacosConfig}}",
+							"path": [
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "nacosDiscovery",
+			"item": [
+				{
+					"name": "serviceA getTest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preNacosDiscoveryA}}/test",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preNacosDiscoveryA}}",
+							"path": [
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "serviceB getTest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preNacosDiscoveryB}}/test",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preNacosDiscoveryB}}",
+							"path": [
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "serviceA 获取实例信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preNacosDiscoveryA}}/test/instance?serviceName=nacosProvider",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preNacosDiscoveryA}}",
+							"path": [
+								"test",
+								"instance"
+							],
+							"query": [
+								{
+									"key": "serviceName",
+									"value": "nacosProvider"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "serviceB 获取实例信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preNacosDiscoveryB}}/test/instance?serviceName=nacosProvider",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preNacosDiscoveryB}}",
+							"path": [
+								"test",
+								"instance"
+							],
+							"query": [
+								{
+									"key": "serviceName",
+									"value": "nacosProvider"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer getTest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preNacosCustomer}}/test",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preNacosCustomer}}",
+							"path": [
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "lettuce",
+			"item": [
+				{
+					"name": "lettuce操作测试",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preLettuce}}/test",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preLettuce}}",
+							"path": [
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "amqp",
+			"item": [
+				{
+					"name": "amqp写入",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preAmqp}}/rabbit/helloworld",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preAmqp}}",
+							"path": [
+								"rabbit",
+								"helloworld"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "junit",
+			"item": [
+				{
+					"name": "无返回参数",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preJunit}}/demo/void",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preJunit}}",
+							"path": [
+								"demo",
+								"void"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "返回String",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preJunit}}/demo/str",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preJunit}}",
+							"path": [
+								"demo",
+								"str"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "返回javabean",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preJunit}}/demo/user",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preJunit}}",
+							"path": [
+								"demo",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "返回统一封装结果",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preJunit}}/demo/result",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preJunit}}",
+							"path": [
+								"demo",
+								"result"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "返回接收参数",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}:{{preJunit}}/demo/saveUser?id=2&name=test&deleted=true",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{preJunit}}",
+							"path": [
+								"demo",
+								"saveUser"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								},
+								{
+									"key": "name",
+									"value": "test"
+								},
+								{
+									"key": "deleted",
+									"value": "true"
+								}
 							]
 						}
 					},

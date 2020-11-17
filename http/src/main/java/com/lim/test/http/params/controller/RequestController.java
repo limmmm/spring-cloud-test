@@ -44,7 +44,7 @@ public class RequestController {
      * 适用于所有请求方式
      * 参数拼接在url后面，形如url?userId=XXX&userName=XXX
      */
-    @RequestMapping(value = "/url", method =
+    @RequestMapping(value = "/urlParam", method =
             {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
     public String requestParam(@RequestParam("userId") String id, @RequestParam("userName") String name) {
         return String.format("params: id: %s, name: %s", id, name);
@@ -60,29 +60,6 @@ public class RequestController {
             {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
     public String pathVariable(@PathVariable("userId") String id, @PathVariable("userName") String name) {
         return String.format("params: id: %s, name: %s", id, name);
-    }
-
-    /**
-     * request body payload传参
-     * 适用于POST、PUT请求
-     * 参数写在request body中
-     * Content-Type: application/json
-     */
-    @RequestMapping(value = "/requestBody", method = {RequestMethod.POST, RequestMethod.PUT})
-    public String requestBody(@RequestBody Map<String, String> params) {
-        return String.format("params: %s", params.toString());
-    }
-
-    /**
-     * request body x-www-form-urlencoded传参
-     * 适用于POST x-www-form-urlencoded请求
-     * 参数写在request body中
-     * Content-Type: application/x-www-form-urlencoded
-     */
-    @RequestMapping(value = "/requestBodyForm", method = {RequestMethod.POST, RequestMethod.PUT})
-    @PostMapping("/requestBodyForm")
-    public String requestBodyForm(@RequestParam Map<String, String> params) {
-        return String.format("params: %s", params.toString());
     }
 
     /**
@@ -110,20 +87,6 @@ public class RequestController {
         }
 
         return String.format("params: %s, body: %s", params.toString(), body.toString());
-    }
-
-    /**
-     * 保存文件
-     * 采用post form-data形式
-     * 无额外参数，userInfo可去掉
-     */
-    @PostMapping("/file")
-    public String file(HttpServletRequest request, @RequestParam("file") MultipartFile file, UserInfo userInfo) {
-        // 文件为空或文件名为空则说明文件接收失败
-        if (file == null || StringUtils.isEmpty(file.getOriginalFilename())) {
-            return "file not exist";
-        }
-        return String.format("file: %s, userInfo: %s", file.getOriginalFilename(), userInfo);
     }
 
 }
