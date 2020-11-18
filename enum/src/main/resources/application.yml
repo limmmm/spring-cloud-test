@@ -1,0 +1,8 @@
+server:
+  port: 18091
+  servlet:
+    context-path: /enum
+
+spring:
+  application:
+    name: enum
