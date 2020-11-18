@@ -1,13 +1,15 @@
 package com.lim.test.tools.commonresponse.response;
 
 import lombok.Getter;
+import lombok.ToString;
 
 /**
  * 返回结果枚举类
  *
  * @author Lim
- * @since 2020/09/27
+ * @since 2020-09-27
  */
+@ToString
 public enum ErrorCode {
 
     // 错误码
@@ -28,17 +30,17 @@ public enum ErrorCode {
 
     /** 错误业务状态码 */
     @Getter
-    private final int errorCode;
+    Integer errorCode;
 
     /** 错误信息(中文描述，返回至前端显示) */
     @Getter
-    private final String message;
+    String message;
 
     /** 错误描述(英文描述) */
     @Getter
-    private final String description;
+    String description;
 
-    ErrorCode(int errorCode, String message, String description) {
+    ErrorCode(Integer errorCode, String message, String description) {
         this.errorCode = errorCode;
         this.message = message;
         this.description = description;

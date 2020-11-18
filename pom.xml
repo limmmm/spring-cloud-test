@@ -55,6 +55,7 @@
         <module>nacos-discovery-client</module>
         <module>lettuce</module>
         <module>amqp</module>
+        <module>enum</module>
 
         <module>mybatis-generator</module>
     </modules>
@@ -79,6 +80,11 @@
             </dependency>
 
             <!-- 一方库 -->
+            <dependency>
+                <groupId>com.lim.test</groupId>
+                <artifactId>common</artifactId>
+                <version>${com.lim.test.module.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.lim.test</groupId>
                 <artifactId>common-response</artifactId>
@@ -144,6 +150,11 @@
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-http</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
 
