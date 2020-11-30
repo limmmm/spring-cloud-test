@@ -1,7 +1,7 @@
 package com.lim.test.base.demo.controller;
 
-import com.lim.test.tools.commonresponse.response.ResponseBody;
-import com.lim.test.tools.commonresponse.response.Result;
+import com.lim.test.common.response.response.ResponseBody;
+import com.lim.test.common.response.response.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

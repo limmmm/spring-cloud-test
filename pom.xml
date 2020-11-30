@@ -41,7 +41,7 @@
     </properties>
 
     <modules>
-        <module>tools</module>
+        <module>common</module>
 
         <module>junit</module>
         <module>base</module>
@@ -82,7 +82,7 @@
             <!-- 一方库 -->
             <dependency>
                 <groupId>com.lim.test</groupId>
-                <artifactId>common</artifactId>
+                <artifactId>common-tools</artifactId>
                 <version>${com.lim.test.module.version}</version>
             </dependency>
             <dependency>

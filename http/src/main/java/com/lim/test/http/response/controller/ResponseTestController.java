@@ -1,9 +1,9 @@
 package com.lim.test.http.response.controller;
 
 import com.lim.test.http.response.vo.ResponseTestVO;
-import com.lim.test.tools.commonresponse.response.ResponseBody;
-import com.lim.test.tools.commonresponse.response.Result;
-import com.lim.test.tools.commonresponse.response.ResultAssert;
+import com.lim.test.common.response.response.ResponseBody;
+import com.lim.test.common.response.response.Result;
+import com.lim.test.common.response.response.ResultAssert;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

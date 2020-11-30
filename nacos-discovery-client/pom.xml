@@ -17,4 +17,6 @@
         <module>customer</module>
     </modules>
 
+    <packaging>pom</packaging>
+
 </project>

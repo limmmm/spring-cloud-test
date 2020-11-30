@@ -5,7 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lim.test.JunitApplication;
 import com.lim.test.junit.demo.vo.User;
-import com.lim.test.tools.commonresponse.response.ResponseBody;
+import com.lim.test.common.response.response.ResponseBody;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

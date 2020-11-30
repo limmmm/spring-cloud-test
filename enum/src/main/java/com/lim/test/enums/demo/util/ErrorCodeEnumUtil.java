@@ -1,7 +1,7 @@
 package com.lim.test.enums.demo.util;
 
-import com.lim.test.tools.common.DynamicEnumUtil;
-import com.lim.test.tools.commonresponse.response.ErrorCode;
+import com.lim.test.common.tools.enums.DynamicEnumUtil;
+import com.lim.test.common.response.response.ErrorCode;
 import lombok.extern.slf4j.Slf4j;
 
 /**
